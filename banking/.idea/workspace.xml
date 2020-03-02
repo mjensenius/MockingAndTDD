@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6ebe720c-f019-457c-b118-fc943b9c3a72" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/AccountInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/RealCustomer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/dk/cphbusiness/banking/RealBankMockingTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/dk/cphbusiness/banking/RealCustomerMockingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/banking.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/Bank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/Movement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/Movement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/miscellaneous/BankTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/miscellaneous/BankTool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/miscellaneous/BaseCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/miscellaneous/BaseCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/miscellaneous/FiveTicketRaffle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/miscellaneous/FiveTicketRaffle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dk/cphbusiness/banking/AccountMockingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dk/cphbusiness/banking/AccountMockingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dk/cphbusiness/banking/AccountTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dk/cphbusiness/banking/BankDummy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dk/cphbusiness/banking/BankStub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dk/cphbusiness/banking/BankStub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dk/cphbusiness/banking/CustomerDummy.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1YZWBCKtsFiUdBDy8ycRzEzK47s" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RunManager" selected="JUnit.RealCustomerMockingTest.customerMustHaveBank">
+    <configuration name="AccountMockingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="banking" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dk.cphbusiness.banking.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dk.cphbusiness.banking" />
+      <option name="MAIN_CLASS_NAME" value="dk.cphbusiness.banking.AccountMockingTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AccountMockingTest.withdrawalTargetMustMatchTransferTarget" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="banking" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dk.cphbusiness.banking.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dk.cphbusiness.banking" />
+      <option name="MAIN_CLASS_NAME" value="dk.cphbusiness.banking.AccountMockingTest" />
+      <option name="METHOD_NAME" value="withdrawalTargetMustMatchTransferTarget" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RealCustomerMockingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="banking" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dk.cphbusiness.banking.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dk.cphbusiness.banking" />
+      <option name="MAIN_CLASS_NAME" value="dk.cphbusiness.banking.RealCustomerMockingTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RealCustomerMockingTest.customerMustHaveAccount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="banking" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dk.cphbusiness.banking.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dk.cphbusiness.banking" />
+      <option name="MAIN_CLASS_NAME" value="dk.cphbusiness.banking.RealCustomerMockingTest" />
+      <option name="METHOD_NAME" value="customerMustHaveAccount" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RealCustomerMockingTest.customerMustHaveBank" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="banking" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dk.cphbusiness.banking.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dk.cphbusiness.banking" />
+      <option name="MAIN_CLASS_NAME" value="dk.cphbusiness.banking.RealCustomerMockingTest" />
+      <option name="METHOD_NAME" value="customerMustHaveBank" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.RealCustomerMockingTest.customerMustHaveBank" />
+        <item itemvalue="JUnit.RealCustomerMockingTest.customerMustHaveAccount" />
+        <item itemvalue="JUnit.RealCustomerMockingTest" />
+        <item itemvalue="JUnit.AccountMockingTest" />
+        <item itemvalue="JUnit.AccountMockingTest.withdrawalTargetMustMatchTransferTarget" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6ebe720c-f019-457c-b118-fc943b9c3a72" name="Default Changelist" comment="" />
+      <created>1583150458617</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583150458617</updated>
+      <workItem from="1583150460470" duration="5665000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="240" y="45" key="#Project_Structure" timestamp="1583150540209">
+      <screen x="0" y="23" width="1280" height="713" />
+    </state>
+    <state x="240" y="45" key="#Project_Structure/0.23.1280.713@0.23.1280.713" timestamp="1583150540209" />
+    <state x="453" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1583155337261">
+      <screen x="0" y="23" width="1280" height="713" />
+    </state>
+    <state x="453" y="96" key="#com.intellij.ide.util.MemberChooser/0.23.1280.713@0.23.1280.713" timestamp="1583155337261" />
+    <state x="378" y="133" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583155966976">
+      <screen x="0" y="23" width="1280" height="713" />
+    </state>
+    <state x="378" y="133" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1280.713@0.23.1280.713" timestamp="1583155966976" />
+    <state width="1238" height="176" key="GridCell.Tab.0.bottom" timestamp="1583156027522">
+      <screen x="0" y="23" width="1280" height="713" />
+    </state>
+    <state width="1238" height="176" key="GridCell.Tab.0.bottom/0.23.1280.713@0.23.1280.713" timestamp="1583156027522" />
+    <state width="1238" height="176" key="GridCell.Tab.0.center" timestamp="1583156027521">
+      <screen x="0" y="23" width="1280" height="713" />
+    </state>
+    <state width="1238" height="176" key="GridCell.Tab.0.center/0.23.1280.713@0.23.1280.713" timestamp="1583156027521" />
+    <state width="1238" height="176" key="GridCell.Tab.0.left" timestamp="1583156027521">
+      <screen x="0" y="23" width="1280" height="713" />
+    </state>
+    <state width="1238" height="176" key="GridCell.Tab.0.left/0.23.1280.713@0.23.1280.713" timestamp="1583156027521" />
+    <state width="1238" height="176" key="GridCell.Tab.0.right" timestamp="1583156027522">
+      <screen x="0" y="23" width="1280" height="713" />
+    </state>
+    <state width="1238" height="176" key="GridCell.Tab.0.right/0.23.1280.713@0.23.1280.713" timestamp="1583156027522" />
+    <state width="1238" height="220" key="GridCell.Tab.1.bottom" timestamp="1583153752173">
+      <screen x="0" y="23" width="1280" height="713" />
+    </state>
+    <state width="1238" height="220" key="GridCell.Tab.1.bottom/0.23.1280.713@0.23.1280.713" timestamp="1583153752173" />
+    <state width="1238" height="220" key="GridCell.Tab.1.center" timestamp="1583153752173">
+      <screen x="0" y="23" width="1280" height="713" />
+    </state>
+    <state width="1238" height="220" key="GridCell.Tab.1.center/0.23.1280.713@0.23.1280.713" timestamp="1583153752173" />
+    <state width="1238" height="220" key="GridCell.Tab.1.left" timestamp="1583153752172">
+      <screen x="0" y="23" width="1280" height="713" />
+    </state>
+    <state width="1238" height="220" key="GridCell.Tab.1.left/0.23.1280.713@0.23.1280.713" timestamp="1583153752172" />
+    <state width="1238" height="220" key="GridCell.Tab.1.right" timestamp="1583153752173">
+      <screen x="0" y="23" width="1280" height="713" />
+    </state>
+    <state width="1238" height="220" key="GridCell.Tab.1.right/0.23.1280.713@0.23.1280.713" timestamp="1583153752173" />
+    <state x="149" y="23" width="982" height="713" key="SettingsEditor" timestamp="1583150580649">
+      <screen x="0" y="23" width="1280" height="713" />
+    </state>
+    <state x="149" y="23" width="982" height="713" key="SettingsEditor/0.23.1280.713@0.23.1280.713" timestamp="1583150580649" />
+  </component>
+</project>
