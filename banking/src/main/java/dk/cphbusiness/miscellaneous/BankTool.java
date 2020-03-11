@@ -1,19 +1,7 @@
 package dk.cphbusiness.miscellaneous;
 
 import dk.cphbusiness.banking.Account;
-import dk.cphbusiness.banking.Bank;
-import dk.cphbusiness.banking.Customer;
 import dk.cphbusiness.banking.Movement;
-
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 public class BankTool {
   /*public void readFromFile(Bank bank, String filename) throws IOException {
