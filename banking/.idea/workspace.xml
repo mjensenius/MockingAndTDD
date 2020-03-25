@@ -2,45 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ebe720c-f019-457c-b118-fc943b9c3a72" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_42_2_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/initbanking.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/teardown.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/DataAccessLayer/CRUDOperations.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/DataAccessLayer/Connector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/banking.iml" beforeDir="false" afterPath="$PROJECT_DIR$/banking.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/implementations/RealAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/implementations/RealAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/implementations/RealBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/implementations/RealBank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/implementations/RealCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/implementations/RealCustomer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/interfaces/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/interfaces/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/interfaces/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/interfaces/Bank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/interfaces/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/interfaces/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/miscellaneous/BankTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/miscellaneous/BankTool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/miscellaneous/BaseCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/miscellaneous/BaseCustomer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/Account.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/AccountInterface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/Bank.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/Customer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/Movement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/RealBank.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/RealCustomer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dk/cphbusiness/miscellaneous/BankTool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dk/cphbusiness/miscellaneous/BankTool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dk/cphbusiness/miscellaneous/BaseCustomer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dk/cphbusiness/banking/AccountMockingTest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/dk/cphbusiness/banking/AccountMockingTest$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dk/cphbusiness/banking/AccountMockingTest$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/dk/cphbusiness/banking/AccountMockingTest$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dk/cphbusiness/banking/AccountMockingTest$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/dk/cphbusiness/banking/AccountMockingTest$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dk/cphbusiness/banking/AccountMockingTest$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dk/cphbusiness/banking/AccountMockingTest$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dk/cphbusiness/banking/AccountMockingTest$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dk/cphbusiness/banking/AccountMockingTest$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dk/cphbusiness/banking/AccountMockingTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/dk/cphbusiness/banking/AccountMockingTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dk/cphbusiness/banking/RealBankMockingTest$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dk/cphbusiness/banking/RealBankMockingTest$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dk/cphbusiness/banking/RealBankMockingTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dk/cphbusiness/banking/RealCustomerMockingTest$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dk/cphbusiness/banking/RealCustomerMockingTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/DataAccessLayer/CRUDOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/DataAccessLayer/CRUDOperations.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,7 +213,8 @@
       <workItem from="1583311423772" duration="4201000" />
       <workItem from="1583913625418" duration="2725000" />
       <workItem from="1585124027025" duration="1105000" />
-      <workItem from="1585125336171" duration="7480000" />
+      <workItem from="1585125336171" duration="7670000" />
+      <workItem from="1585165708712" duration="846000" />
     </task>
     <servers />
   </component>
@@ -273,38 +237,38 @@
       <screen x="0" y="23" width="1280" height="713" />
     </state>
     <state x="378" y="133" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1280.713@0.23.1280.713" timestamp="1583917348144" />
-    <state width="1238" height="176" key="GridCell.Tab.0.bottom" timestamp="1585136775281">
+    <state width="1238" height="220" key="GridCell.Tab.0.bottom" timestamp="1585137425272">
       <screen x="0" y="23" width="1280" height="713" />
     </state>
-    <state width="1238" height="176" key="GridCell.Tab.0.bottom/0.23.1280.713@0.23.1280.713" timestamp="1585136775281" />
-    <state width="1238" height="176" key="GridCell.Tab.0.center" timestamp="1585136775280">
+    <state width="1238" height="220" key="GridCell.Tab.0.bottom/0.23.1280.713@0.23.1280.713" timestamp="1585137425272" />
+    <state width="1238" height="220" key="GridCell.Tab.0.center" timestamp="1585137425270">
       <screen x="0" y="23" width="1280" height="713" />
     </state>
-    <state width="1238" height="176" key="GridCell.Tab.0.center/0.23.1280.713@0.23.1280.713" timestamp="1585136775280" />
-    <state width="1238" height="176" key="GridCell.Tab.0.left" timestamp="1585136775279">
+    <state width="1238" height="220" key="GridCell.Tab.0.center/0.23.1280.713@0.23.1280.713" timestamp="1585137425270" />
+    <state width="1238" height="220" key="GridCell.Tab.0.left" timestamp="1585137425269">
       <screen x="0" y="23" width="1280" height="713" />
     </state>
-    <state width="1238" height="176" key="GridCell.Tab.0.left/0.23.1280.713@0.23.1280.713" timestamp="1585136775279" />
-    <state width="1238" height="176" key="GridCell.Tab.0.right" timestamp="1585136775280">
+    <state width="1238" height="220" key="GridCell.Tab.0.left/0.23.1280.713@0.23.1280.713" timestamp="1585137425269" />
+    <state width="1238" height="220" key="GridCell.Tab.0.right" timestamp="1585137425271">
       <screen x="0" y="23" width="1280" height="713" />
     </state>
-    <state width="1238" height="176" key="GridCell.Tab.0.right/0.23.1280.713@0.23.1280.713" timestamp="1585136775280" />
-    <state width="1238" height="220" key="GridCell.Tab.1.bottom" timestamp="1585136559651">
+    <state width="1238" height="220" key="GridCell.Tab.0.right/0.23.1280.713@0.23.1280.713" timestamp="1585137425271" />
+    <state width="1238" height="220" key="GridCell.Tab.1.bottom" timestamp="1585137425279">
       <screen x="0" y="23" width="1280" height="713" />
     </state>
-    <state width="1238" height="220" key="GridCell.Tab.1.bottom/0.23.1280.713@0.23.1280.713" timestamp="1585136559651" />
-    <state width="1238" height="220" key="GridCell.Tab.1.center" timestamp="1585136559648">
+    <state width="1238" height="220" key="GridCell.Tab.1.bottom/0.23.1280.713@0.23.1280.713" timestamp="1585137425279" />
+    <state width="1238" height="220" key="GridCell.Tab.1.center" timestamp="1585137425275">
       <screen x="0" y="23" width="1280" height="713" />
     </state>
-    <state width="1238" height="220" key="GridCell.Tab.1.center/0.23.1280.713@0.23.1280.713" timestamp="1585136559648" />
-    <state width="1238" height="220" key="GridCell.Tab.1.left" timestamp="1585136559647">
+    <state width="1238" height="220" key="GridCell.Tab.1.center/0.23.1280.713@0.23.1280.713" timestamp="1585137425275" />
+    <state width="1238" height="220" key="GridCell.Tab.1.left" timestamp="1585137425273">
       <screen x="0" y="23" width="1280" height="713" />
     </state>
-    <state width="1238" height="220" key="GridCell.Tab.1.left/0.23.1280.713@0.23.1280.713" timestamp="1585136559647" />
-    <state width="1238" height="220" key="GridCell.Tab.1.right" timestamp="1585136559649">
+    <state width="1238" height="220" key="GridCell.Tab.1.left/0.23.1280.713@0.23.1280.713" timestamp="1585137425273" />
+    <state width="1238" height="220" key="GridCell.Tab.1.right" timestamp="1585137425276">
       <screen x="0" y="23" width="1280" height="713" />
     </state>
-    <state width="1238" height="220" key="GridCell.Tab.1.right/0.23.1280.713@0.23.1280.713" timestamp="1585136559649" />
+    <state width="1238" height="220" key="GridCell.Tab.1.right/0.23.1280.713@0.23.1280.713" timestamp="1585137425276" />
     <state x="178" y="41" key="Maven.ArtifactSearchDialog" timestamp="1585135031906">
       <screen x="0" y="23" width="1280" height="713" />
     </state>
@@ -313,10 +277,10 @@
       <screen x="0" y="23" width="1280" height="713" />
     </state>
     <state x="149" y="23" width="982" height="713" key="SettingsEditor/0.23.1280.713@0.23.1280.713" timestamp="1583150580649" />
-    <state x="319" y="212" key="com.intellij.ide.util.TipDialog" timestamp="1585124025462">
+    <state x="319" y="212" key="com.intellij.ide.util.TipDialog" timestamp="1585165731309">
       <screen x="0" y="23" width="1280" height="713" />
     </state>
-    <state x="319" y="212" key="com.intellij.ide.util.TipDialog/0.23.1280.713@0.23.1280.713" timestamp="1585124025462" />
+    <state x="319" y="212" key="com.intellij.ide.util.TipDialog/0.23.1280.713@0.23.1280.713" timestamp="1585165731309" />
     <state x="402" y="23" key="refactoring.ChangeSignatureDialog" timestamp="1585132818095">
       <screen x="0" y="23" width="1280" height="713" />
     </state>

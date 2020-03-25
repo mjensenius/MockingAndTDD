@@ -2,6 +2,7 @@ package dk.cphbusiness.banking.DataAccessLayer;
 
 import dk.cphbusiness.banking.implementations.RealAccount;
 import dk.cphbusiness.banking.interfaces.Account;
+import org.apache.ibatis.jdbc.ScriptRunner;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -11,7 +12,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import org.apache.ibatis.jdbc.ScriptRunner;
 
 public class CRUDOperations {
     Connector conn = new Connector("jdbc:postgresql://localhost:5432/Banking", "postgres", "m4th145bj");
@@ -33,18 +33,18 @@ public class CRUDOperations {
 
     public Account getAccountById(int id) {
         Account account = null;
-        String SQL = "SELECT accountid, bankid, customerid, accountNumber, balance FROM Account WHERE id = ?;";
+        String SQL = "SELECT accountid, bankid, customerid, accountNumber, balance FROM Account WHERE id = ?";
         try (Connection connect = conn.connect();
              PreparedStatement pstmt = connect.prepareStatement(SQL)) {
             pstmt.setInt(1, id);
             ResultSet rs = pstmt.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 int accountid = rs.getInt("accountid");
                 int bankid = rs.getInt("bankid");
                 int customerid = rs.getInt("customerid");
                 String accountNumber = rs.getString("accountNumber");
                 int balance = rs.getInt("balance");
-                account = new RealAccount(accountid,bankid,customerid,accountNumber,balance);
+                account = new RealAccount(accountid, bankid, customerid, accountNumber, balance);
             }
 
         } catch (SQLException ex) {
@@ -52,8 +52,35 @@ public class CRUDOperations {
         }
         return account;
     }
+
+    public void deleteAccountById(int id) {
+        String SQL = "DELETE * FROM Account WHERE id = ?";
+        try (Connection connect = conn.connect();
+             PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+            pstmt.setInt(1, id);
+            ResultSet rs = pstmt.executeQuery();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void updateBankForAccount(int newBankid, int id) {
+        String SQL = "UPDATE Account SET bankid = ? where id = ?";
+        try (Connection connect = conn.connect();
+             PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+            // hvis man giver hele account ?
+            // pstmt.setInt(1, account.getBank().getId());
+            pstmt.setInt(1, newBankid);
+            pstmt.setInt(2, id);
+            ResultSet rs = pstmt.executeQuery();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
     public void initDB() throws FileNotFoundException {
-       Connection con =  conn.connect();
+        Connection con = conn.connect();
         System.out.println("Connection established......");
         //Initialize the script runner
         ScriptRunner sr = new ScriptRunner(con);
@@ -62,8 +89,9 @@ public class CRUDOperations {
         //Running the script
         sr.runScript(reader);
     }
+
     public void teardownDB() throws FileNotFoundException {
-        Connection con =  conn.connect();
+        Connection con = conn.connect();
         System.out.println("Connection established......");
         //Initialize the script runner
         ScriptRunner sr = new ScriptRunner(con);
