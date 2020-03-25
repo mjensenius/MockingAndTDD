@@ -11,13 +11,15 @@ import java.util.List;
 
 
 public class RealAccount implements Account {
-
-    private final Bank bank;
-    private final Customer customer;
+    private int id;
+    private Bank bank;
+    private Customer customer;
+    private int bankid;
+    private int customerid;
     private final String number;
     private long balance = 0;
-    private final List<Movement> withdrawals;
-    private final List<Movement> deposits;
+    private List<Movement> withdrawals;
+    private List<Movement> deposits;
 
     public RealAccount(Bank bank, Customer customer, String number) {
         this.bank = bank;
@@ -25,6 +27,14 @@ public class RealAccount implements Account {
         this.number = number;
         this.withdrawals = new ArrayList<>();
         this.deposits = new ArrayList<>();
+    }
+
+    public RealAccount(int id, int bankid, int customerid, String accountNumber, int balance) {
+        this.id = id;
+        this.bankid = bankid;
+        this.customerid = customerid;
+        this.number = accountNumber;
+        this.balance = balance;
     }
 
     @Override
@@ -44,6 +54,11 @@ public class RealAccount implements Account {
             throw new NotFoundException("Account: " + targetNumber + " does not exist");
         }
         transfer(amount, target);
+    }
+
+    @Override
+    public int getId() {
+        return id;
     }
 
     @Override

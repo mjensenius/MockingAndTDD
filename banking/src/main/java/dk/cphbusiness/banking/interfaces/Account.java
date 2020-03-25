@@ -6,6 +6,7 @@ import java.util.List;
 
 
 public interface Account {
+    int getId();
 
     Bank getBank();
 

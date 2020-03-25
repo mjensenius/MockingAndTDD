@@ -6,6 +6,7 @@ import java.util.Map;
 
 
 public interface Bank {
+    int getId();
 
     String getCvr();
 

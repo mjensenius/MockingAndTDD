@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 public class RealCustomer implements Customer {
-
+    private int id;
     private final String cpr;
     private final String name;
     private final Bank bank;
@@ -21,6 +21,11 @@ public class RealCustomer implements Customer {
         this.cpr = cpr;
         this.name = name;
         this.bank = bank;
+    }
+
+    @Override
+    public int getId() {
+        return id;
     }
 
     @Override

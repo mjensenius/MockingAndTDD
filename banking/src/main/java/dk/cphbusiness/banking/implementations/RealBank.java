@@ -8,7 +8,7 @@ import dk.cphbusiness.banking.interfaces.Customer;
 import java.util.Map;
 
 public class RealBank implements Bank {
-
+    private int id;
     private final String cvr;
     private final String name;
     private final Map<String, Account> accounts;
@@ -17,6 +17,11 @@ public class RealBank implements Bank {
         this.cvr = cvr;
         this.name = name;
         this.accounts = accounts;
+    }
+
+    @Override
+    public int getId() {
+        return id;
     }
 
     @Override

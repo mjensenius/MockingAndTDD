@@ -7,6 +7,7 @@ import java.util.Map;
 
 
 public interface Customer {
+    int getId();
 
     void transfer(long amount, Account account, Account targetAccount) throws NotFoundException;
 

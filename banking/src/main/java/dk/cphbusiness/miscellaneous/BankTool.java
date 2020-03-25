@@ -1,7 +1,5 @@
 package dk.cphbusiness.miscellaneous;
 
-import dk.cphbusiness.banking.Account;
-import dk.cphbusiness.banking.Movement;
 
 public class BankTool {
   /*public void readFromFile(Bank bank, String filename) throws IOException {
