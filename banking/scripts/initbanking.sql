@@ -33,3 +33,14 @@ CREATE TABLE BankTest.Movement(
 	amount int,
  	targetAccount int references BankTest.Account(id),
 	sourceAccount int references BankTest.Account(id));
+
+INSERT INTO BankTest.Bank (cvr,name) VALUES ('1234','Jyske Bank');
+INSERT INTO BankTest.Bank (cvr,name) VALUES ('4321','Danske Bank');
+
+INSERT INTO BankTest.Customer (cpr,name,bankid) VALUES ('1010102010','Mogens',1);
+INSERT INTO BankTest.Customer (cpr,name,bankid) VALUES ('2020201010','Jesper',2);
+
+INSERT INTO BankTest.Account (bankid,customerid,accountnumber,balance) VALUES (1,1,'ABC123',100);
+INSERT INTO BankTest.Account (bankid,customerid,accountnumber,balance) VALUES (2,2,'123ABC',200);
+
+INSERT INTO BankTest.Movement(timeoftransfer,amount,targetaccount,sourceaccount) VALUES (now(),100,1,2);

@@ -1,5 +1,6 @@
 package dk.cphbusiness.banking.DataAccessLayer;
 
+import dk.cphbusiness.banking.implementations.RealCustomer;
 import dk.cphbusiness.banking.implementations.RealMovement;
 import dk.cphbusiness.banking.interfaces.Account;
 import dk.cphbusiness.banking.interfaces.Bank;
@@ -14,6 +15,6 @@ public interface DataAccessInterface {
     Bank getBankById(int id);
     void deleteBankById(int id);
     void createCustomer(Customer customer);
-    void updateCustomerName(String name, Customer customer);
+    void updateCustomerName(String name, RealCustomer customer);
     void createMovement(RealMovement movement);
 }

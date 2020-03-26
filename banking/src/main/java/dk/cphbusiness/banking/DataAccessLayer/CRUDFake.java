@@ -85,9 +85,9 @@ public class CRUDFake implements DataAccessInterface {
 
     @Override
     public void deleteBankById(int id) {
-        for (Bank bank : banks) {
-            if (bank.getId() == id) {
-                banks.remove(bank);
+        for (int i = 0; i < banks.size(); i++ ) {
+            if (banks.get(i).getId() == id) {
+                banks.remove(i);
             }
         }
     }
@@ -97,9 +97,9 @@ public class CRUDFake implements DataAccessInterface {
      customers.add(customer);
     }
 
-    @Override
-    public void updateCustomerName(String name, Customer customer) {
 
+    public void updateCustomerName(String name, RealCustomer customer) {
+    customer.setName(name);
     }
 
     @Override
@@ -121,9 +121,9 @@ public class CRUDFake implements DataAccessInterface {
         RealCustomer customer3 = new RealCustomer(3,"12345","Julie",bank3);
         RealCustomer customer4 = new RealCustomer(4, "1234335","pia",bank3);
 
-        RealAccount account1 = new RealAccount(1,1,1,"ABC123",44);
-        RealAccount account2 = new RealAccount(2,2,2,"ABC1234", 5);
-        RealAccount account3 = new RealAccount(3,3,3,"ABC1234",100);
+        RealAccount account1 = new RealAccount(1,bank1,customer1,"ABC123",44);
+        RealAccount account2 = new RealAccount(2,bank2,customer2,"ABC1234", 5);
+        RealAccount account3 = new RealAccount(3,bank3,customer3,"ABC12345",100);
 
         createAccount(account1);
         createAccount(account2);

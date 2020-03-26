@@ -14,8 +14,6 @@ public class RealAccount implements Account {
     private int id;
     private Bank bank;
     private Customer customer;
-    private int bankid;
-    private int customerid;
     private final String number;
     private long balance = 0;
     private List<Movement> withdrawals;
@@ -29,13 +27,14 @@ public class RealAccount implements Account {
         this.deposits = new ArrayList<>();
     }
 
-    public RealAccount(int id, int bankid, int customerid, String accountNumber, int balance) {
+    public RealAccount(int id, Bank bank, Customer customer, String number, int balance) {
         this.id = id;
-        this.bankid = bankid;
-        this.customerid = customerid;
-        this.number = accountNumber;
+        this.bank = bank;
+        this.customer = customer;
+        this.number = number;
         this.balance = balance;
     }
+
 
     @Override
     public void transfer(long amount, Account target) throws NotFoundException {

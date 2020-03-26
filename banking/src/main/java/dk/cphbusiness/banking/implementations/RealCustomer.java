@@ -12,8 +12,13 @@ import java.util.Map;
 
 public class RealCustomer implements Customer {
     private int id;
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     private final String cpr;
-    private final String name;
+    private String name;
     private final Bank bank;
     private final Map<String, Account> accounts = new HashMap<>();
 
@@ -47,6 +52,10 @@ public class RealCustomer implements Customer {
     @Override
     public String getName() {
         return name;
+    }
+    
+    public void setName(String name){
+        this.name = name;
     }
 
     @Override
