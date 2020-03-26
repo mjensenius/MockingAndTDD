@@ -1,7 +1,10 @@
 package dk.cphbusiness.banking.DataAccessLayer;
 
 import dk.cphbusiness.banking.implementations.RealAccount;
+import dk.cphbusiness.banking.implementations.RealBank;
 import dk.cphbusiness.banking.interfaces.Account;
+import dk.cphbusiness.banking.interfaces.Bank;
+import dk.cphbusiness.banking.interfaces.Customer;
 import org.apache.ibatis.jdbc.ScriptRunner;
 
 import java.io.BufferedReader;
@@ -12,6 +15,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 
 public class CRUDOperations {
     Connector conn = new Connector("jdbc:postgresql://localhost:5432/Banking", "postgres", "m4th145bj");
@@ -65,14 +69,94 @@ public class CRUDOperations {
         }
     }
 
-    public void updateBankForAccount(int newBankid, int id) {
-        String SQL = "UPDATE Account SET bankid = ? where id = ?";
+    public void updateBalanceForAccount(int amount, Account account) {
+        String SQL = "UPDATE Account SET balance = ? where id = ?";
         try (Connection connect = conn.connect();
              PreparedStatement pstmt = connect.prepareStatement(SQL)) {
-            // hvis man giver hele account ?
-            // pstmt.setInt(1, account.getBank().getId());
-            pstmt.setInt(1, newBankid);
-            pstmt.setInt(2, id);
+            pstmt.setInt(1, amount);
+            pstmt.setInt(2, account.getId());
+            ResultSet rs = pstmt.executeQuery();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    public void createBank(Bank bank) {
+        String SQL = "INSERT INTO Bank(cvr,name) values (?,?)";
+        try (Connection connect = conn.connect();
+             PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+            pstmt.setString(1, bank.getCvr());
+            pstmt.setString(2, bank.getName());
+            ResultSet rs = pstmt.executeQuery();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    public Bank getBankById(int id) {
+        Bank bank = null;
+        String SQL = "SELECT id, cvr, name FROM bank WHERE id = ?";
+        try (Connection connect = conn.connect();
+             PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+            pstmt.setInt(1, id);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                int bankid = rs.getInt("id");
+                String cvr = rs.getString("cvr");
+                String name = rs.getString("name");
+                bank = new RealBank(bankid, cvr, name);
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return bank;
+    }
+    public void deleteBankById(int id) {
+        String SQL = "DELETE * FROM Bank WHERE id = ?";
+        try (Connection connect = conn.connect();
+             PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+            pstmt.setInt(1, id);
+            ResultSet rs = pstmt.executeQuery();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void createCustomer(Customer customer){
+        String SQL = "INSERT INTO Customer(cpr,name,bankid) values (?,?,?)";
+        try (Connection connect = conn.connect();
+             PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+            pstmt.setString(1, customer.getCpr());
+            pstmt.setString(2, customer.getName());
+            pstmt.setInt(3, customer.getBank().getId());
+            ResultSet rs = pstmt.executeQuery();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+    public void updateCustomerName(String name, Customer customer){
+        String SQL = "UPDATE Customer SET name = ? where id = ?";
+        try (Connection connect = conn.connect();
+             PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+            pstmt.setString(1, name);
+            pstmt.setInt(2, customer.getId());
+            ResultSet rs = pstmt.executeQuery();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    public void createMovement(Account acc1, Account acc2, int amount){
+        String SQL = "INSERT INTO Movement(timeOfTransfer, amount, targetAccount, sourceAccount) values (?,?,?,?)";
+        try (Connection connect = conn.connect();
+             PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+
+            pstmt.setDate(1, (java.sql.Date) new Date(System.currentTimeMillis()));
+            pstmt.setInt(2, amount);
+            pstmt.setInt(3, acc1.getId());
+            pstmt.setInt(4, acc2.getId());
             ResultSet rs = pstmt.executeQuery();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());

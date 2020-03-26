@@ -9,15 +9,21 @@ import java.util.Map;
 
 public class RealBank implements Bank {
     private int id;
-    private final String cvr;
-    private final String name;
-    private final Map<String, Account> accounts;
+    private String cvr;
+    private String name;
+    private  Map<String, Account> accounts;
 
     public RealBank(String cvr, String name, Map<String, Account> accounts) {
         this.cvr = cvr;
         this.name = name;
         this.accounts = accounts;
     }
+    public RealBank(int id, String cvr, String name){
+        this.id = id;
+        this.cvr = cvr;
+        this.name = name;
+    }
+
 
     @Override
     public int getId() {
