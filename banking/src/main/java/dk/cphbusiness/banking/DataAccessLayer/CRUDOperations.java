@@ -2,6 +2,7 @@ package dk.cphbusiness.banking.DataAccessLayer;
 
 import dk.cphbusiness.banking.implementations.RealAccount;
 import dk.cphbusiness.banking.implementations.RealBank;
+import dk.cphbusiness.banking.implementations.RealMovement;
 import dk.cphbusiness.banking.interfaces.Account;
 import dk.cphbusiness.banking.interfaces.Bank;
 import dk.cphbusiness.banking.interfaces.Customer;
@@ -17,7 +18,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 
-public class CRUDOperations {
+public class CRUDOperations implements DataAccessInterface {
     Connector conn = new Connector("jdbc:postgresql://localhost:5432/Banking", "postgres", "m4th145bj");
 
     public void createAccount(Account account) {
@@ -148,15 +149,15 @@ public class CRUDOperations {
         }
     }
 
-    public void createMovement(Account acc1, Account acc2, int amount){
+    public void createMovement(RealMovement movement){
         String SQL = "INSERT INTO Movement(timeOfTransfer, amount, targetAccount, sourceAccount) values (?,?,?,?)";
         try (Connection connect = conn.connect();
              PreparedStatement pstmt = connect.prepareStatement(SQL)) {
 
             pstmt.setDate(1, (java.sql.Date) new Date(System.currentTimeMillis()));
-            pstmt.setInt(2, amount);
-            pstmt.setInt(3, acc1.getId());
-            pstmt.setInt(4, acc2.getId());
+            pstmt.setLong(2, movement.getAmount());
+            pstmt.setInt(3, movement.getTargetId());
+            pstmt.setInt(4, movement.getSourceId());
             ResultSet rs = pstmt.executeQuery();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());

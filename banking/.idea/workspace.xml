@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ebe720c-f019-457c-b118-fc943b9c3a72" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/DataAccessLayer/CRUDFake.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/DataAccessLayer/DataAccessInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/dk/cphbusiness/banking/DataAccessFakeTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/DataAccessLayer/CRUDOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/DataAccessLayer/CRUDOperations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/implementations/RealBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/implementations/RealBank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/implementations/RealCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/implementations/RealCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/implementations/RealMovement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/implementations/RealMovement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/DataAccessLayer/CRUDOperations.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/DataAccessLayer/CRUDOperations.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/implementations/RealBank.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/implementations/RealBank.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/implementations/RealCustomer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/implementations/RealCustomer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/implementations/RealMovement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/implementations/RealMovement.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +58,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
-  <component name="RunManager" selected="Application.CRUDOperations">
+  <component name="RunManager" selected="JUnit.DataAccessFakeTests">
     <configuration name="CRUDOperations" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dk.cphbusiness.banking.DataAccessLayer.CRUDOperations" />
       <module name="banking" />
@@ -111,18 +120,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BankMockingTest.bankMustRegisterAccount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DataAccessFakeTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="banking" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="dk.cphbusiness.banking.implementations.*" />
+          <option name="PATTERN" value="dk.cphbusiness.banking.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="dk.cphbusiness.banking" />
-      <option name="MAIN_CLASS_NAME" value="dk.cphbusiness.banking.BankMockingTest" />
-      <option name="METHOD_NAME" value="bankMustRegisterAccount" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="dk.cphbusiness.banking.DataAccessFakeTests" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -193,6 +201,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DataAccessFakeTests" />
         <item itemvalue="Application.CRUDOperations" />
         <item itemvalue="JUnit.RealBankMockingTest.bankMustRegisterAccount" />
         <item itemvalue="JUnit.RealBankMockingTest.bankMustRegisterAccount (2)" />
@@ -216,7 +225,7 @@
       <workItem from="1585124027025" duration="1105000" />
       <workItem from="1585125336171" duration="7670000" />
       <workItem from="1585165708712" duration="1040000" />
-      <workItem from="1585211241204" duration="1660000" />
+      <workItem from="1585211241204" duration="5509000" />
     </task>
     <servers />
   </component>
@@ -231,30 +240,30 @@
       <screen x="0" y="23" width="1280" height="713" />
     </state>
     <state x="240" y="45" key="#Project_Structure/0.23.1280.713@0.23.1280.713" timestamp="1583150540209" />
-    <state x="453" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1585132965380">
+    <state x="453" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1585216803094">
       <screen x="0" y="23" width="1280" height="713" />
     </state>
-    <state x="453" y="96" key="#com.intellij.ide.util.MemberChooser/0.23.1280.713@0.23.1280.713" timestamp="1585132965380" />
+    <state x="453" y="96" key="#com.intellij.ide.util.MemberChooser/0.23.1280.713@0.23.1280.713" timestamp="1585216803094" />
     <state x="378" y="133" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583917348144">
       <screen x="0" y="23" width="1280" height="713" />
     </state>
     <state x="378" y="133" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1280.713@0.23.1280.713" timestamp="1583917348144" />
-    <state width="1238" height="220" key="GridCell.Tab.0.bottom" timestamp="1585137425272">
+    <state width="1238" height="176" key="GridCell.Tab.0.bottom" timestamp="1585216864364">
       <screen x="0" y="23" width="1280" height="713" />
     </state>
-    <state width="1238" height="220" key="GridCell.Tab.0.bottom/0.23.1280.713@0.23.1280.713" timestamp="1585137425272" />
-    <state width="1238" height="220" key="GridCell.Tab.0.center" timestamp="1585137425270">
+    <state width="1238" height="176" key="GridCell.Tab.0.bottom/0.23.1280.713@0.23.1280.713" timestamp="1585216864364" />
+    <state width="1238" height="176" key="GridCell.Tab.0.center" timestamp="1585216864362">
       <screen x="0" y="23" width="1280" height="713" />
     </state>
-    <state width="1238" height="220" key="GridCell.Tab.0.center/0.23.1280.713@0.23.1280.713" timestamp="1585137425270" />
-    <state width="1238" height="220" key="GridCell.Tab.0.left" timestamp="1585137425269">
+    <state width="1238" height="176" key="GridCell.Tab.0.center/0.23.1280.713@0.23.1280.713" timestamp="1585216864362" />
+    <state width="1238" height="176" key="GridCell.Tab.0.left" timestamp="1585216864361">
       <screen x="0" y="23" width="1280" height="713" />
     </state>
-    <state width="1238" height="220" key="GridCell.Tab.0.left/0.23.1280.713@0.23.1280.713" timestamp="1585137425269" />
-    <state width="1238" height="220" key="GridCell.Tab.0.right" timestamp="1585137425271">
+    <state width="1238" height="176" key="GridCell.Tab.0.left/0.23.1280.713@0.23.1280.713" timestamp="1585216864361" />
+    <state width="1238" height="176" key="GridCell.Tab.0.right" timestamp="1585216864363">
       <screen x="0" y="23" width="1280" height="713" />
     </state>
-    <state width="1238" height="220" key="GridCell.Tab.0.right/0.23.1280.713@0.23.1280.713" timestamp="1585137425271" />
+    <state width="1238" height="176" key="GridCell.Tab.0.right/0.23.1280.713@0.23.1280.713" timestamp="1585216864363" />
     <state width="1238" height="220" key="GridCell.Tab.1.bottom" timestamp="1585137425279">
       <screen x="0" y="23" width="1280" height="713" />
     </state>

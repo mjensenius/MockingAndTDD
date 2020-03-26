@@ -23,6 +23,12 @@ public class RealBank implements Bank {
         this.cvr = cvr;
         this.name = name;
     }
+    public RealBank(int id, String cvr, String name, Map<String, Account> accounts){
+        this.accounts = accounts;
+        this.id = id;
+        this.cvr = cvr;
+        this.name = name;
+    }
 
 
     @Override

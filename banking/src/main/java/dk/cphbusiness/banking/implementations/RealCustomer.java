@@ -22,6 +22,12 @@ public class RealCustomer implements Customer {
         this.name = name;
         this.bank = bank;
     }
+    public RealCustomer(int id, String cpr, String name, Bank bank) {
+        this.id = id;
+        this.cpr = cpr;
+        this.name = name;
+        this.bank = bank;
+    }
 
     @Override
     public int getId() {
