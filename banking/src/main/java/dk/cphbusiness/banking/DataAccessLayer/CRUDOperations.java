@@ -49,7 +49,7 @@ public class CRUDOperations implements DataAccessInterface {
             PreparedStatement pstmt = connect.prepareStatement(SQL)) {
             pstmt.setInt(1, id);
             ResultSet rs = pstmt.executeQuery();
-            System.out.println(rs.);
+            System.out.println(rs);
             if (rs.next()) {
                 int bankid = rs.getInt("accbankid");
                 String cvr = rs.getString("cvr");
