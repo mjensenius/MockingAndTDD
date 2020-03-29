@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class Connector {
     private String url = "jdbc:postgresql://127.0.0.1:50413/BankTest";
     private String user = "postgres";
-    private String password = "m4th145bj";
+    private String password = "Stilldre1";
 
     public Connector(String url, String user, String password) {
         this.url = url;

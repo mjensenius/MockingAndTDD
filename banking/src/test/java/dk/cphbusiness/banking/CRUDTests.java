@@ -37,5 +37,72 @@ public class CRUDTests {
         crud.createAccount(account);
         assertEquals(crud.getAccountById(3).getCustomer().getName(), "Jesper");
     }
+    @Test
+    public void getAccoountById(){
+        Account account = crud.getAccountById(2);
+        assertEquals(account.getNumber(), "123ABC");
+    }
+    
+    @Test
+    public void deleteAccountById() throws InterruptedException{
+       crud.deleteAccountById(1);
+       assertEquals(crud.getAccountById(1), null);
+    }
+    /*
+    @Test
+    public void updateBalanceForAccount(){
+        Bank bank = crud.getBankById(2);
+        Customer customer = crud.getCustomerById(2);
+        Account account = new RealAccount(bank, customer,"#1231");
+        crud.createAccount(account);
+        assertEquals(crud.getAccountById(3).getCustomer().getName(), "Jesper");
+    }
+    @Test
+    public void createBank(){
+        Bank bank = crud.getBankById(2);
+        Customer customer = crud.getCustomerById(2);
+        Account account = new RealAccount(bank, customer,"#1231");
+        crud.createAccount(account);
+        assertEquals(crud.getAccountById(3).getCustomer().getName(), "Jesper");
+    }
+    @Test
+    public void getBankById(){
+        Bank bank = crud.getBankById(2);
+        Customer customer = crud.getCustomerById(2);
+        Account account = new RealAccount(bank, customer,"#1231");
+        crud.createAccount(account);
+        assertEquals(crud.getAccountById(3).getCustomer().getName(), "Jesper");
+    }
+    @Test
+    public void createCustomer(){
+        Bank bank = crud.getBankById(2);
+        Customer customer = crud.getCustomerById(2);
+        Account account = new RealAccount(bank, customer,"#1231");
+        crud.createAccount(account);
+        assertEquals(crud.getAccountById(3).getCustomer().getName(), "Jesper");
+    }
+    @Test
+    public void updateCustomerName(){
+        Bank bank = crud.getBankById(2);
+        Customer customer = crud.getCustomerById(2);
+        Account account = new RealAccount(bank, customer,"#1231");
+        crud.createAccount(account);
+        assertEquals(crud.getAccountById(3).getCustomer().getName(), "Jesper");
+    }
+    @Test
+    public void createMovement(){
+        Bank bank = crud.getBankById(2);
+        Customer customer = crud.getCustomerById(2);
+        Account account = new RealAccount(bank, customer,"#1231");
+        crud.createAccount(account);
+        assertEquals(crud.getAccountById(3).getCustomer().getName(), "Jesper");
+    }
+    */
+    
+    
+    
 
+    
+    
+    
 }

@@ -20,7 +20,7 @@ import java.sql.SQLException;
 import java.util.Date;
 
 public class CRUDOperations implements DataAccessInterface {
-    Connector conn = new Connector("jdbc:postgresql://localhost:5432/Banking", "postgres", "m4th145bj");
+    Connector conn = new Connector("jdbc:postgresql://localhost:5432/Banking", "postgres", "Stilldre1");
 
     public void createAccount(Account account) {
         String SQL = "INSERT INTO banktest.account(bankid,customerid,accountNumber, balance) values (?,?,?,?)";
@@ -46,10 +46,11 @@ public class CRUDOperations implements DataAccessInterface {
                 "INNER JOIN banktest.customer ON banktest.account.customerid = customer.id\n" +
                 "where account.id =?";
         try (Connection connect = conn.connect();
-             PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+            PreparedStatement pstmt = connect.prepareStatement(SQL)) {
             pstmt.setInt(1, id);
             ResultSet rs = pstmt.executeQuery();
-            while (rs.next()) {
+            System.out.println(rs.);
+            if (rs.next()) {
                 int bankid = rs.getInt("accbankid");
                 String cvr = rs.getString("cvr");
                 String bankname = rs.getString("bankname");
@@ -62,6 +63,10 @@ public class CRUDOperations implements DataAccessInterface {
                 String accountNumber = rs.getString("accountNumber");
                 int balance = rs.getInt("balance");
                 account = new RealAccount(id,bank, customer, accountNumber, balance);
+                System.out.println("return actual account");
+            }else{
+                System.out.println("return null");
+                return account;
             }
 
         } catch (SQLException ex) {
@@ -71,12 +76,12 @@ public class CRUDOperations implements DataAccessInterface {
     }
 
     public void deleteAccountById(int id) {
-        String SQL = "DELETE * FROM banktest.account WHERE id = ?";
+        String SQL = "DELETE FROM banktest.account WHERE id = ?";
         try (Connection connect = conn.connect();
-             PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+            PreparedStatement pstmt = connect.prepareStatement(SQL)) {
             pstmt.setInt(1, id);
             ResultSet rs = pstmt.executeQuery();
-
+            System.out.println(rs.toString());
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -207,7 +212,7 @@ public class CRUDOperations implements DataAccessInterface {
         //Initialize the script runner
         ScriptRunner sr = new ScriptRunner(con);
         //Creating a reader object
-        Reader reader = new BufferedReader(new FileReader("/Users/sofie/Desktop/Software Development/MockingAndTDD/banking/scripts/initbanking.sql"));
+        Reader reader = new BufferedReader(new FileReader("D:\\Code\\PBA\\2.Semester\\Test\\MockingAndTDD\\banking\\scripts\\initbanking.sql"));
         //Running the script
         sr.runScript(reader);
     }
@@ -218,7 +223,7 @@ public class CRUDOperations implements DataAccessInterface {
         //Initialize the script runner
         ScriptRunner sr = new ScriptRunner(con);
         //Creating a reader object
-        Reader reader = new BufferedReader(new FileReader("/Users/sofie/Desktop/Software Development/MockingAndTDD/banking/scripts/teardown.sql"));
+        Reader reader = new BufferedReader(new FileReader("D:\\Code\\PBA\\2.Semester\\Test\\MockingAndTDD\\banking\\scripts\\teardown.sql"));
         //Running the script
         sr.runScript(reader);
 
