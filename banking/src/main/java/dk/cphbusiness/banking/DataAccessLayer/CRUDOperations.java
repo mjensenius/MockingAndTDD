@@ -7,6 +7,7 @@ import dk.cphbusiness.banking.implementations.RealMovement;
 import dk.cphbusiness.banking.interfaces.Account;
 import dk.cphbusiness.banking.interfaces.Bank;
 import dk.cphbusiness.banking.interfaces.Customer;
+import dk.cphbusiness.banking.interfaces.Movement;
 import org.apache.ibatis.jdbc.ScriptRunner;
 
 import java.io.BufferedReader;
@@ -17,7 +18,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class CRUDOperations implements DataAccessInterface {
     Connector conn = new Connector("jdbc:postgresql://localhost:5432/Banking", "postgres", "Stilldre1");
@@ -49,7 +53,7 @@ public class CRUDOperations implements DataAccessInterface {
             PreparedStatement pstmt = connect.prepareStatement(SQL)) {
             pstmt.setInt(1, id);
             ResultSet rs = pstmt.executeQuery();
-            System.out.println(rs);
+            
             if (rs.next()) {
                 int bankid = rs.getInt("accbankid");
                 String cvr = rs.getString("cvr");
@@ -145,7 +149,7 @@ public class CRUDOperations implements DataAccessInterface {
     public void createCustomer(Customer customer){
         String SQL = "INSERT INTO banktest.customer(cpr,name,bankid) values (?,?,?)";
         try (Connection connect = conn.connect();
-             PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+            PreparedStatement pstmt = connect.prepareStatement(SQL)) {
             pstmt.setString(1, customer.getCpr());
             pstmt.setString(2, customer.getName());
             pstmt.setInt(3, customer.getBank().getId());
@@ -179,10 +183,10 @@ public class CRUDOperations implements DataAccessInterface {
         return customer;
 
     }
-    public void updateCustomerName(String name, RealCustomer customer){
+    public void updateCustomerName(String name, Customer customer){
         String SQL = "UPDATE banktest.customer SET name = ? where id = ?";
         try (Connection connect = conn.connect();
-             PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+            PreparedStatement pstmt = connect.prepareStatement(SQL)) {
             pstmt.setString(1, name);
             pstmt.setInt(2, customer.getId());
             ResultSet rs = pstmt.executeQuery();
@@ -190,13 +194,38 @@ public class CRUDOperations implements DataAccessInterface {
             System.out.println(ex.getMessage());
         }
     }
+    
+    public List<Movement> getMovementsByAccountId(int id){
+        List<Movement> movements = new ArrayList<>();
+        String SQL = "SELECT amount,sourceaccount,targetaccount FROM BankTest.movement where sourceAccount = ? or targetAccount = ?";
+        try (Connection connect = conn.connect();
+             PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+            pstmt.setInt(1, id);
+            pstmt.setInt(2, id);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+               
+                int amount = rs.getInt("amount");
+                int source = rs.getInt("sourceaccount");
+                int target = rs.getInt("targetaccount");
+                Movement movement = new RealMovement(amount, target, source);
+                movements.add(movement);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return movements;
+    }
+    
 
-    public void createMovement(RealMovement movement){
+    public void createMovement(Movement movement){
         String SQL = "INSERT INTO banktest.movement(timeOfTransfer, amount, targetAccount, sourceAccount) values (?,?,?,?)";
+        long millis=System.currentTimeMillis();  
+        java.sql.Date date = new java.sql.Date(millis);  
         try (Connection connect = conn.connect();
              PreparedStatement pstmt = connect.prepareStatement(SQL)) {
 
-            pstmt.setDate(1, (java.sql.Date) new Date(System.currentTimeMillis()));
+            pstmt.setDate(1, date);
             pstmt.setLong(2, movement.getAmount());
             pstmt.setInt(3, movement.getTargetId());
             pstmt.setInt(4, movement.getSourceId());
@@ -205,6 +234,9 @@ public class CRUDOperations implements DataAccessInterface {
             System.out.println(ex.getMessage());
         }
     }
+    
+  
+    
 
     public void initDB() throws FileNotFoundException {
         Connection con = conn.connect();
@@ -229,9 +261,13 @@ public class CRUDOperations implements DataAccessInterface {
 
     }
 
+    
+    
     public static void main(String[] args) throws FileNotFoundException {
         CRUDOperations crud = new CRUDOperations();
         crud.initDB();
         crud.teardownDB();
     }
+    
+ 
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="1" name="dk.cphbusiness.banking.CRUDTests" time="2.315" errors="0" skipped="0">
+<testsuite tests="10" failures="0" name="dk.cphbusiness.banking.CRUDTests" time="6.713" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\bin"/>
@@ -67,122 +67,14 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="getAccoountById" time="0.659"/>
-  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="deleteAccountById" time="0.711">
-    <failure message="expected:&lt;dk.cphbusiness.banking.implementations.RealAccount@3fb6a447&gt; but was:&lt;null&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;dk.cphbusiness.banking.implementations.RealAccount@3fb6a447&gt; but was:&lt;null&gt;
-	at org.junit.Assert.fail(Assert.java:88)
-	at org.junit.Assert.failNotEquals(Assert.java:834)
-	at org.junit.Assert.assertEquals(Assert.java:118)
-	at org.junit.Assert.assertEquals(Assert.java:144)
-	at dk.cphbusiness.banking.CRUDTests.deleteAccountById(CRUDTests.java:49)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</failure>
-    <system-out>Connected to the PostgreSQL server successfully.
-Connection established......
-DROP TABLE IF EXISTS banktest.bank CASCADE
-
-DROP TABLE IF EXISTS banktest.account CASCADE
-
-DROP TABLE IF EXISTS banktest.movement CASCADE
-
-DROP TABLE IF EXISTS banktest.customer CASCADE
-
-DROP SCHEMA IF EXISTS banktest CASCADE
-
-SET search_path to banktest
-
-CREATE SCHEMA BankTest
-
-SET search_path to &quot;BankTest&quot;
-
-CREATE TABLE BankTest.Bank(
- 	id SERIAL PRIMARY KEY,
-	cvr varchar, 
- 	name varchar)
-
-CREATE TABLE BankTest.Customer(
-	id SERIAL PRIMARY KEY,
-	cpr varchar,
-	name varchar,
-	bankid int references BankTest.Bank(id))
-
-CREATE TABLE BankTest.Account(
-	id SERIAL PRIMARY KEY, 
-	bankid int references BankTest.Bank(id), 
-	customerid int references BankTest.Customer(id), 
-	accountNumber varchar, 
-	balance int)
-
-CREATE TABLE BankTest.Movement(
-	id SERIAL PRIMARY KEY,
-	timeOfTransfer date,
-	amount int,
- 	targetAccount int references BankTest.Account(id),
-	sourceAccount int references BankTest.Account(id))
-
-INSERT INTO BankTest.Bank (cvr,name) VALUES (&apos;1234&apos;,&apos;Jyske Bank&apos;)
-
-INSERT INTO BankTest.Bank (cvr,name) VALUES (&apos;4321&apos;,&apos;Danske Bank&apos;)
-
-INSERT INTO BankTest.Customer (cpr,name,bankid) VALUES (&apos;1010102010&apos;,&apos;Mogens&apos;,1)
-
-INSERT INTO BankTest.Customer (cpr,name,bankid) VALUES (&apos;2020201010&apos;,&apos;Jesper&apos;,2)
-
-INSERT INTO BankTest.Account (bankid,customerid,accountnumber,balance) VALUES (1,1,&apos;ABC123&apos;,100)
-
-INSERT INTO BankTest.Account (bankid,customerid,accountnumber,balance) VALUES (2,2,&apos;123ABC&apos;,200)
-
-INSERT INTO BankTest.Movement(timeoftransfer,amount,targetaccount,sourceaccount) VALUES (now(),100,1,2)
-
-Connected to the PostgreSQL server successfully.
-ERROR: update or delete on table &quot;account&quot; violates foreign key constraint &quot;movement_targetaccount_fkey&quot; on table &quot;movement&quot;
-  Detail: Key (id)=(1) is still referenced from table &quot;movement&quot;.
-Connected to the PostgreSQL server successfully.
-org.postgresql.jdbc.PgResultSet@7a5d012c
-return actual account
-Connected to the PostgreSQL server successfully.
-Connection established......
-DROP TABLE IF EXISTS banktest.bank CASCADE
-
-DROP TABLE IF EXISTS banktest.account CASCADE
-
-DROP TABLE IF EXISTS banktest.movement CASCADE
-
-DROP TABLE IF EXISTS banktest.customer CASCADE
-
-DROP SCHEMA IF EXISTS banktest CASCADE
-
-</system-out>
-  </testcase>
-  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="createAccount" time="0.945"/>
+  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="getAccoountById" time="0.736"/>
+  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="updateBalanceForAccount" time="0.679"/>
+  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="getMovementsByAccountId" time="0.607"/>
+  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="updateCustomerName" time="0.712"/>
+  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="getBankById" time="0.634"/>
+  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="createMovement" time="0.688"/>
+  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="deleteAccountById" time="0.629"/>
+  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="createAccount" time="0.695"/>
+  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="createBank" time="0.569"/>
+  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="createCustomer" time="0.764"/>
 </testsuite>
