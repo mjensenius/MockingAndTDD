@@ -24,8 +24,32 @@ import java.util.Date;
 import java.util.List;
 
 public class CRUDOperations implements DataAccessInterface {
-    Connector conn = new Connector("jdbc:postgresql://localhost:5432/Banking", "postgres", "Stilldre1");
+    Connector conn = new Connector();
 
+    public void initDB() throws FileNotFoundException {
+        Connection con = conn.connect();
+        System.out.println("Connection established......");
+        //Initialize the script runner
+        ScriptRunner sr = new ScriptRunner(con);
+        //Creating a reader object
+        Reader reader = new BufferedReader(new FileReader("D:\\Code\\PBA\\2.Semester\\Test\\MockingAndTDD\\banking\\scripts\\initbanking.sql"));
+        //Running the script
+        sr.runScript(reader);
+    }
+
+    public void teardownDB() throws FileNotFoundException {
+        Connection con = conn.connect();
+        System.out.println("Connection established......");
+        //Initialize the script runner
+        ScriptRunner sr = new ScriptRunner(con);
+        //Creating a reader object
+        Reader reader = new BufferedReader(new FileReader("D:\\Code\\PBA\\2.Semester\\Test\\MockingAndTDD\\banking\\scripts\\teardown.sql"));
+        //Running the script
+        sr.runScript(reader);
+
+    }
+    
+    
     public void createAccount(Account account) {
         String SQL = "INSERT INTO banktest.account(bankid,customerid,accountNumber, balance) values (?,?,?,?)";
         try (Connection connect = conn.connect();
@@ -235,31 +259,7 @@ public class CRUDOperations implements DataAccessInterface {
         }
     }
     
-  
-    
 
-    public void initDB() throws FileNotFoundException {
-        Connection con = conn.connect();
-        System.out.println("Connection established......");
-        //Initialize the script runner
-        ScriptRunner sr = new ScriptRunner(con);
-        //Creating a reader object
-        Reader reader = new BufferedReader(new FileReader("D:\\Code\\PBA\\2.Semester\\Test\\MockingAndTDD\\banking\\scripts\\initbanking.sql"));
-        //Running the script
-        sr.runScript(reader);
-    }
-
-    public void teardownDB() throws FileNotFoundException {
-        Connection con = conn.connect();
-        System.out.println("Connection established......");
-        //Initialize the script runner
-        ScriptRunner sr = new ScriptRunner(con);
-        //Creating a reader object
-        Reader reader = new BufferedReader(new FileReader("D:\\Code\\PBA\\2.Semester\\Test\\MockingAndTDD\\banking\\scripts\\teardown.sql"));
-        //Running the script
-        sr.runScript(reader);
-
-    }
 
     
     

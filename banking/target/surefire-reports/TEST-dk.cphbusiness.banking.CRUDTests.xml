@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="10" failures="0" name="dk.cphbusiness.banking.CRUDTests" time="6.713" errors="0" skipped="0">
+<testsuite tests="10" failures="0" name="dk.cphbusiness.banking.CRUDTests" time="7.01" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\bin"/>
@@ -67,14 +67,14 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="getAccoountById" time="0.736"/>
-  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="updateBalanceForAccount" time="0.679"/>
-  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="getMovementsByAccountId" time="0.607"/>
-  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="updateCustomerName" time="0.712"/>
-  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="getBankById" time="0.634"/>
-  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="createMovement" time="0.688"/>
-  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="deleteAccountById" time="0.629"/>
-  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="createAccount" time="0.695"/>
-  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="createBank" time="0.569"/>
-  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="createCustomer" time="0.764"/>
+  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="getAccoountById" time="0.876"/>
+  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="updateBalanceForAccount" time="0.67"/>
+  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="getMovementsByAccountId" time="0.487"/>
+  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="updateCustomerName" time="0.703"/>
+  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="getBankById" time="0.691"/>
+  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="createMovement" time="0.69"/>
+  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="deleteAccountById" time="0.765"/>
+  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="createAccount" time="0.801"/>
+  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="createBank" time="0.706"/>
+  <testcase classname="dk.cphbusiness.banking.CRUDTests" name="createCustomer" time="0.621"/>
 </testsuite>
