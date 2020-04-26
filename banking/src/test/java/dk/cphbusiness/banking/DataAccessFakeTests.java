@@ -18,7 +18,6 @@ public class DataAccessFakeTests {
 
     @Before
     public void startTesting() {
-        //initiating start data with 3 accounts, 3 banks and 4 customers
         crud = new CRUDFake();
         crud.initData();
     }

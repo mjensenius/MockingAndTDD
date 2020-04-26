@@ -17,6 +17,8 @@ public interface Customer {
 
     Bank getBank();
 
+    void setName(String name);
+    
     Map<String, Account> getAccounts();
 
     void addAccount(Account account);

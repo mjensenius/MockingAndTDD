@@ -7,4 +7,9 @@ public interface Movement {
     LocalDateTime getTime();
 
     long getAmount();
+    
+    int getTargetId();
+     
+    int getSourceId();
+
 }

@@ -18,12 +18,12 @@ CREATE TABLE BankTest.Customer(
 	id SERIAL PRIMARY KEY,
 	cpr varchar,
 	name varchar,
-	bankid int references BankTest.Bank(id));
+	bankid int references BankTest.Bank(id)ON DELETE CASCADE);
 	
 CREATE TABLE BankTest.Account(
 	id SERIAL PRIMARY KEY, 
-	bankid int references BankTest.Bank(id), 
-	customerid int references BankTest.Customer(id), 
+	bankid int references BankTest.Bank(id) ON DELETE CASCADE, 
+	customerid int references BankTest.Customer(id) ON DELETE CASCADE, 
 	accountNumber varchar, 
 	balance int);
 
@@ -31,8 +31,8 @@ CREATE TABLE BankTest.Movement(
 	id SERIAL PRIMARY KEY,
 	timeOfTransfer date,
 	amount int,
- 	targetAccount int references BankTest.Account(id),
-	sourceAccount int references BankTest.Account(id));
+ 	targetAccount int references BankTest.Account(id) ON DELETE CASCADE,
+	sourceAccount int references BankTest.Account(id) ON DELETE CASCADE);
 
 INSERT INTO BankTest.Bank (cvr,name) VALUES ('1234','Jyske Bank');
 INSERT INTO BankTest.Bank (cvr,name) VALUES ('4321','Danske Bank');

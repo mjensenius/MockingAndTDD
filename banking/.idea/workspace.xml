@@ -2,8 +2,85 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ebe720c-f019-457c-b118-fc943b9c3a72" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaces/AccountInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaces/BankInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaces/CustomerInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaces/IHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/contract/DTO/AccountDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/contract/DTO/BankDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/contract/DTO/CustomerDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/contract/DTO/MovementDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ContractTest/Beforeclass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ContractTest/DummyData/AccountDummy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ContractTest/DummyData/BankDummy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ContractTest/DummyData/CustomerDummy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ContractTest/IAccountTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ContractTest/IBankTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ContractTest/ICustomerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/.netbeans_automatic_build" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Interfaces/AccountInterface.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Interfaces/BankInterface.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Interfaces/CustomerInterface.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Interfaces/IHolder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/contract/DTO/AccountDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/contract/DTO/BankDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/contract/DTO/CustomerDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/contract/DTO/MovementDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/ContractTest.Beforeclass.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/ContractTest.IAccountTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-ContractTest.Beforeclass.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-ContractTest.IAccountTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dk.cphbusiness.banking.AccountMockingTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dk.cphbusiness.banking.BankMockingTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dk.cphbusiness.banking.CRUDTests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dk.cphbusiness.banking.CustomerMockingTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-dk.cphbusiness.banking.MovementMockingTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/dk.cphbusiness.banking.AccountMockingTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/dk.cphbusiness.banking.BankMockingTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/dk.cphbusiness.banking.CRUDTests.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/dk.cphbusiness.banking.CustomerMockingTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/dk.cphbusiness.banking.MovementMockingTest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/.netbeans_automatic_build" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/ContractTest/Beforeclass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/ContractTest/DummyData/AccountDummy$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/ContractTest/DummyData/AccountDummy$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/ContractTest/DummyData/AccountDummy$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/ContractTest/DummyData/AccountDummy$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/ContractTest/DummyData/AccountDummy.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/ContractTest/DummyData/BankDummy.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/ContractTest/DummyData/CustomerDummy.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/ContractTest/IAccountTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/ContractTest/IBankTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/ContractTest/ICustomerTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/initbanking.sql" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/initbanking.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/DataAccessLayer/CRUDFake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/DataAccessLayer/CRUDFake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/DataAccessLayer/CRUDOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/DataAccessLayer/CRUDOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/DataAccessLayer/Connector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/DataAccessLayer/Connector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/DataAccessLayer/DataAccessInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/DataAccessLayer/DataAccessInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/interfaces/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/interfaces/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/interfaces/Movement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/interfaces/Movement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/dk/cphbusiness/banking/CRUDTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dk/cphbusiness/banking/CRUDTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dk/cphbusiness/banking/DataAccessFakeTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dk/cphbusiness/banking/DataAccessFakeTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/DataAccessLayer/CRUDFake.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/DataAccessLayer/CRUDFake.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/DataAccessLayer/CRUDOperations.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/DataAccessLayer/CRUDOperations.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/DataAccessLayer/Connector.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/DataAccessLayer/Connector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/DataAccessLayer/DataAccessInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/DataAccessLayer/DataAccessInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/implementations/RealAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/implementations/RealAccount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/implementations/RealBank.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/implementations/RealBank.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/implementations/RealCustomer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/implementations/RealCustomer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/implementations/RealMovement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/implementations/RealMovement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/interfaces/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/interfaces/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/interfaces/Bank.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/interfaces/Bank.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/interfaces/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/interfaces/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/interfaces/Movement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dk/cphbusiness/banking/interfaces/Movement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/dk/cphbusiness/banking/AccountMockingTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/dk/cphbusiness/banking/AccountMockingTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/dk/cphbusiness/banking/CRUDTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/dk/cphbusiness/banking/CRUDTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/dk/cphbusiness/banking/DataAccessFakeTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/dk/cphbusiness/banking/DataAccessFakeTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,6 +295,7 @@
       <workItem from="1585125336171" duration="7670000" />
       <workItem from="1585165708712" duration="1040000" />
       <workItem from="1585211241204" duration="16951000" />
+      <workItem from="1587910516206" duration="98000" />
     </task>
     <servers />
   </component>
@@ -306,7 +384,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/dk/cphbusiness/banking/DataAccessLayer/CRUDOperations.java</url>
-          <line>50</line>
+          <line>78</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>

@@ -98,12 +98,12 @@ public class CRUDFake implements DataAccessInterface {
     }
 
 
-    public void updateCustomerName(String name, RealCustomer customer) {
+    public void updateCustomerName(String name, Customer customer) {
     customer.setName(name);
     }
 
     @Override
-    public void createMovement(RealMovement movement) {
+    public void createMovement(Movement movement) {
     movements.add(movement);
     }
 
@@ -139,4 +139,6 @@ public class CRUDFake implements DataAccessInterface {
         createCustomer(customer4);
 
     }
+
+
 }
