@@ -1,9 +1,9 @@
 -------------------------------------------------------------------------------
 Test set: dk.cphbusiness.banking.MovementMockingTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec <<< FAILURE!
-testGetTime(dk.cphbusiness.banking.MovementMockingTest)  Time elapsed: 0.014 sec  <<< FAILURE!
-java.lang.AssertionError: expected:<2020-03-02T13:00> but was:<2020-03-29T14:25:22.874>
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec <<< FAILURE!
+testGetTime(dk.cphbusiness.banking.MovementMockingTest)  Time elapsed: 0.009 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<2020-03-02T13:00> but was:<2020-04-26T10:57:07.010>
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:834)
 	at org.junit.Assert.assertEquals(Assert.java:118)
