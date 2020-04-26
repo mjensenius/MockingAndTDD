@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
 
 public class MovementMockingTest {
 
-    @Test
+
     public void testGetTime() {
         Movement instance = new RealMovement(1000);
         System.out.println("getTime");

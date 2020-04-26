@@ -5,6 +5,7 @@
  */
 package ContractTest;
 
+import ContractTest.DummyData.AccountDummy;
 import Interfaces.AccountInterface;
 import Interfaces.IHolder;
 import contract.DTO.AccountDTO;
@@ -24,7 +25,8 @@ public class IAccountTest {
     AccountInterface manager;
 
     public IAccountTest() {
-        manager = IHolder.accountInterfaceHolder;
+        //manager = IHolder.accountInterfaceHolder;
+        manager = new AccountDummy();
     }
 
     /**

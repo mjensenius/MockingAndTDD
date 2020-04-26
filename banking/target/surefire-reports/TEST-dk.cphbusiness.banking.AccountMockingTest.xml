@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="8" failures="0" name="dk.cphbusiness.banking.AccountMockingTest" time="0.121" errors="0" skipped="0">
+<testsuite tests="8" failures="0" name="dk.cphbusiness.banking.AccountMockingTest" time="0.033" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\bin"/>
@@ -66,12 +66,12 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testGetDeposits" time="0.003"/>
+  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testGetDeposits" time="0.007"/>
   <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testGetWithdrawals" time="0"/>
-  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testAccountTransferWithNumberNotFoundException" time="0.024"/>
-  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testWithdraw" time="0.077"/>
-  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testGetBalance" time="0"/>
-  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testAccountTransferWithNumber" time="0.008"/>
-  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testAccountTransferWithObject" time="0.009"/>
-  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testDeposit" time="0"/>
+  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testAccountTransferWithNumberNotFoundException" time="0.016"/>
+  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testWithdraw" time="0"/>
+  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testGetBalance" time="0.001"/>
+  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testAccountTransferWithNumber" time="0.005"/>
+  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testAccountTransferWithObject" time="0.003"/>
+  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testDeposit" time="0.001"/>
 </testsuite>

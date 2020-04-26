@@ -5,6 +5,7 @@
  */
 package ContractTest;
 
+import ContractTest.DummyData.BankDummy;
 import Interfaces.BankInterface;
 import Interfaces.IHolder;
 import contract.DTO.BankDTO;
@@ -19,7 +20,8 @@ public class IBankTest {
        BankInterface manager;
 
     public IBankTest() {
-       manager = IHolder.bankInterfaceHolder;
+       //manager = IHolder.bankInterfaceHolder;
+       manager = new BankDummy();
     }
 
     /**

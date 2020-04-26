@@ -1,10 +1,6 @@
 
 package API;
 
-import contract.DTO.AccountDTO;
-import contract.DTO.BankDTO;
-import contract.DTO.CustomerDTO;
-import contract.DTO.MovementDTO;
 import com.google.gson.Gson;
 import dk.cphbusiness.banking.DataAccessLayer.CRUDOperations;
 import dk.cphbusiness.banking.exceptions.NotFoundException;

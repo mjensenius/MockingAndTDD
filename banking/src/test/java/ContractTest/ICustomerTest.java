@@ -5,6 +5,7 @@
  */
 package ContractTest;
 
+import ContractTest.DummyData.CustomerDummy;
 import Interfaces.CustomerInterface;
 import Interfaces.IHolder;
 import contract.DTO.CustomerDTO;
@@ -20,6 +21,7 @@ public class ICustomerTest {
 
     public ICustomerTest() {
         manager = IHolder.customerInterfaceHolder;
+        manager = new CustomerDummy();
     }
 
     /**
