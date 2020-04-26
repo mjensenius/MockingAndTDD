@@ -1,10 +1,10 @@
 -------------------------------------------------------------------------------
 Test set: ContractTest.IAccountTest
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 7, Skipped: 0, Time elapsed: 0.064 sec <<< FAILURE!
-testGetDeposits(ContractTest.IAccountTest)  Time elapsed: 0.006 sec  <<< ERROR!
+Tests run: 7, Failures: 0, Errors: 7, Skipped: 0, Time elapsed: 0.092 sec <<< FAILURE!
+testGetDeposits(ContractTest.IAccountTest)  Time elapsed: 0.008 sec  <<< ERROR!
 java.lang.NullPointerException
-	at ContractTest.IAccountTest.testGetDeposits(IAccountTest.java:93)
+	at ContractTest.IAccountTest.testGetDeposits(IAccountTest.java:96)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -35,9 +35,9 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testGetWithdrawals(ContractTest.IAccountTest)  Time elapsed: 0 sec  <<< ERROR!
+testGetWithdrawals(ContractTest.IAccountTest)  Time elapsed: 0.001 sec  <<< ERROR!
 java.lang.NullPointerException
-	at ContractTest.IAccountTest.testGetWithdrawals(IAccountTest.java:81)
+	at ContractTest.IAccountTest.testGetWithdrawals(IAccountTest.java:84)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -103,7 +103,7 @@ java.lang.NullPointerException
 
 testTransferWithAccountNumber(ContractTest.IAccountTest)  Time elapsed: 0.001 sec  <<< ERROR!
 java.lang.NullPointerException
-	at ContractTest.IAccountTest.testTransferWithAccountNumber(IAccountTest.java:57)
+	at ContractTest.IAccountTest.testTransferWithAccountNumber(IAccountTest.java:69)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -134,9 +134,9 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testWithdraw(ContractTest.IAccountTest)  Time elapsed: 0 sec  <<< ERROR!
+testWithdraw(ContractTest.IAccountTest)  Time elapsed: 0.001 sec  <<< ERROR!
 java.lang.NullPointerException
-	at ContractTest.IAccountTest.testWithdraw(IAccountTest.java:123)
+	at ContractTest.IAccountTest.testWithdraw(IAccountTest.java:126)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -167,9 +167,9 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testGetBalance(ContractTest.IAccountTest)  Time elapsed: 0.001 sec  <<< ERROR!
+testGetBalance(ContractTest.IAccountTest)  Time elapsed: 0 sec  <<< ERROR!
 java.lang.NullPointerException
-	at ContractTest.IAccountTest.testGetBalance(IAccountTest.java:70)
+	at ContractTest.IAccountTest.testGetBalance(IAccountTest.java:52)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -200,9 +200,9 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testDeposit(ContractTest.IAccountTest)  Time elapsed: 0.001 sec  <<< ERROR!
+testDeposit(ContractTest.IAccountTest)  Time elapsed: 0 sec  <<< ERROR!
 java.lang.NullPointerException
-	at ContractTest.IAccountTest.testDeposit(IAccountTest.java:105)
+	at ContractTest.IAccountTest.testDeposit(IAccountTest.java:108)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

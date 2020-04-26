@@ -102,6 +102,46 @@ public class CRUDOperations implements DataAccessInterface {
         }
         return account;
     }
+    
+      public Account getAccountByNumber(String accountNumber) {
+        Account account = null;
+        String SQL = "SELECT account.id as accId, account.bankid as accbankid,  customerid, \n" +
+                "accountNumber, balance, bank.cvr, bank.name as bankname,\n" +
+                "customer.cpr, customer.name as customername\n" +
+                "FROM banktest.account\n" +
+                "INNER JOIN banktest.bank ON banktest.account.bankid = bank.id\n" +
+                "INNER JOIN banktest.customer ON banktest.account.customerid = customer.id\n" +
+                "where account.accountNumber =?";
+        try (Connection connect = conn.connect();
+            PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+            pstmt.setString(1, accountNumber);
+            ResultSet rs = pstmt.executeQuery();
+            
+            if (rs.next()) {
+                int accId = rs.getInt("accId");
+                int bankid = rs.getInt("accbankid");
+                String cvr = rs.getString("cvr");
+                String bankname = rs.getString("bankname");
+                Bank bank = new RealBank(bankid, cvr, bankname);
+
+                String cpr = rs.getString("cpr");
+                String customername = rs.getString("customername");
+                Customer customer = new RealCustomer(cpr, customername,bank);
+
+                String accNumber = rs.getString("accountNumber");
+                int balance = rs.getInt("balance");
+                account = new RealAccount(accId,bank, customer, accNumber, balance);
+                System.out.println("return actual account");
+            }else{
+                System.out.println("return null");
+                return account;
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return account;
+    }
 
     public void deleteAccountById(int id) {
         String SQL = "DELETE FROM banktest.account WHERE id = ?";
@@ -266,7 +306,8 @@ public class CRUDOperations implements DataAccessInterface {
     public static void main(String[] args) throws FileNotFoundException {
         CRUDOperations crud = new CRUDOperations();
         crud.initDB();
-        crud.teardownDB();
+        //crud.teardownDB();
+        System.out.println("Running and listening");
     }
     
  

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="7" failures="0" name="ContractTest.IAccountTest" time="0.009" errors="7" skipped="0">
+<testsuite tests="7" failures="0" name="ContractTest.IAccountTest" time="0.011" errors="7" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\bin"/>
@@ -16,7 +16,6 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
-    <property name="test" value="ContractTest.IAccountTest"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="D:\Code\PBA\2.Semester\Test\MockingAndTDD\banking"/>
     <property name="java.runtime.version" value="1.8.0_121-b13"/>
@@ -32,7 +31,7 @@
     <property name="maven.ext.class.path" value="C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar"/>
     <property name="classworlds.conf" value="C:\Program Files\apache-maven-3.6.3\bin\..\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_121\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\System32\OpenSSH\;D:\Programs\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Git LFS;%MAVEN_HOME%\bin;C:\Users\Mikkel\Anaconda3;C:\Users\Mikkel\Anaconda3\Library\mingw-w64\bin;C:\Users\Mikkel\Anaconda3\Library\usr\bin;C:\Users\Mikkel\Anaconda3\Library\bin;C:\Users\Mikkel\Anaconda3\Scripts;C:\Users\Mikkel\AppData\Local\Microsoft\WindowsApps;C:\Users\Mikkel\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Mikkel\AppData\Roaming\npm;D:\Programs\New folder (2)\IntelliJ IDEA Community Edition 2019.2.4\bin;;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_121\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\System32\OpenSSH\;D:\Programs\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Git LFS;%MAVEN_HOME%\bin;C:\Users\Mikkel\Anaconda3;C:\Users\Mikkel\Anaconda3\Library\mingw-w64\bin;C:\Users\Mikkel\Anaconda3\Library\usr\bin;C:\Users\Mikkel\Anaconda3\Library\bin;C:\Users\Mikkel\Anaconda3\Scripts;C:\Users\Mikkel\AppData\Local\Microsoft\WindowsApps;C:\Users\Mikkel\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Mikkel\AppData\Roaming\npm;D:\Programs\New folder (2)\IntelliJ IDEA Community Edition 2019.2.4\bin;;C:\Program Files\MongoDB\Server\4.2\bin;;."/>
     <property name="maven.conf" value="C:\Program Files\apache-maven-3.6.3\bin\../conf"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
@@ -49,7 +48,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_121\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=ContractTest.IAccountTest -Dmaven.ext.class.path=C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 surefire:test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 clean install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="user.language.format" value="da"/>
@@ -67,9 +66,9 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ContractTest.IAccountTest" name="testGetDeposits" time="0.006">
+  <testcase classname="ContractTest.IAccountTest" name="testGetDeposits" time="0.008">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at ContractTest.IAccountTest.testGetDeposits(IAccountTest.java:93)
+	at ContractTest.IAccountTest.testGetDeposits(IAccountTest.java:96)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -100,12 +99,12 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </error>
-    <system-out>getDeposits
+    <system-out>Account: getDeposits
 </system-out>
   </testcase>
-  <testcase classname="ContractTest.IAccountTest" name="testGetWithdrawals" time="0">
+  <testcase classname="ContractTest.IAccountTest" name="testGetWithdrawals" time="0.001">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at ContractTest.IAccountTest.testGetWithdrawals(IAccountTest.java:81)
+	at ContractTest.IAccountTest.testGetWithdrawals(IAccountTest.java:84)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -136,7 +135,7 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </error>
-    <system-out>getWithdrawals
+    <system-out>Account: getWithdrawals
 </system-out>
   </testcase>
   <testcase classname="ContractTest.IAccountTest" name="testGetAccount" time="0">
@@ -172,12 +171,12 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </error>
-    <system-out>getAccount
+    <system-out>Account: getAccount
 </system-out>
   </testcase>
   <testcase classname="ContractTest.IAccountTest" name="testTransferWithAccountNumber" time="0.001">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at ContractTest.IAccountTest.testTransferWithAccountNumber(IAccountTest.java:57)
+	at ContractTest.IAccountTest.testTransferWithAccountNumber(IAccountTest.java:69)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -208,12 +207,12 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </error>
-    <system-out>transferWithAccount
+    <system-out>Account: transferWithAccount
 </system-out>
   </testcase>
-  <testcase classname="ContractTest.IAccountTest" name="testWithdraw" time="0">
+  <testcase classname="ContractTest.IAccountTest" name="testWithdraw" time="0.001">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at ContractTest.IAccountTest.testWithdraw(IAccountTest.java:123)
+	at ContractTest.IAccountTest.testWithdraw(IAccountTest.java:126)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -244,12 +243,12 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </error>
-    <system-out>withdraw
+    <system-out>Account: withdraw
 </system-out>
   </testcase>
-  <testcase classname="ContractTest.IAccountTest" name="testGetBalance" time="0.001">
+  <testcase classname="ContractTest.IAccountTest" name="testGetBalance" time="0">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at ContractTest.IAccountTest.testGetBalance(IAccountTest.java:70)
+	at ContractTest.IAccountTest.testGetBalance(IAccountTest.java:52)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -280,12 +279,12 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </error>
-    <system-out>deposit
+    <system-out>Account: getBalance
 </system-out>
   </testcase>
-  <testcase classname="ContractTest.IAccountTest" name="testDeposit" time="0.001">
+  <testcase classname="ContractTest.IAccountTest" name="testDeposit" time="0">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at ContractTest.IAccountTest.testDeposit(IAccountTest.java:105)
+	at ContractTest.IAccountTest.testDeposit(IAccountTest.java:108)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -316,7 +315,7 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </error>
-    <system-out>deposit
+    <system-out>Account: deposit
 </system-out>
   </testcase>
 </testsuite>
