@@ -7,7 +7,9 @@ package API;
 
 
 import java.util.Set;
-import javax.ws.rs.core.Application;/**
+import javax.ws.rs.core.Application;
+
+/**
  *
  * @author Mikkel
  */
