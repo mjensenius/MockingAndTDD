@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="8" failures="0" name="dk.cphbusiness.banking.AccountMockingTest" time="0.033" errors="0" skipped="0">
+<testsuite tests="8" failures="0" name="dk.cphbusiness.banking.AccountMockingTest" time="0.019" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\bin"/>
     <property name="java.vm.version" value="25.121-b13"/>
     <property name="user.country.format" value="DK"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="D:\Code\PBA\2.Semester\Test\MockingAndTDD\banking"/>
+    <property name="maven.multiModuleProjectDirectory" value="D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="D:\Code\PBA\2.Semester\Test\MockingAndTDD\banking"/>
+    <property name="user.dir" value="D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking"/>
     <property name="java.runtime.version" value="1.8.0_121-b13"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_121\jre\lib\endorsed"/>
@@ -48,7 +48,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_121\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 clean install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="user.language.format" value="da"/>
@@ -68,10 +68,10 @@
   </properties>
   <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testGetDeposits" time="0.007"/>
   <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testGetWithdrawals" time="0"/>
-  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testAccountTransferWithNumberNotFoundException" time="0.016"/>
-  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testWithdraw" time="0"/>
-  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testGetBalance" time="0.001"/>
-  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testAccountTransferWithNumber" time="0.005"/>
-  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testAccountTransferWithObject" time="0.003"/>
-  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testDeposit" time="0.001"/>
+  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testAccountTransferWithNumberNotFoundException" time="0.01"/>
+  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testWithdraw" time="0.001"/>
+  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testGetBalance" time="0"/>
+  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testAccountTransferWithNumber" time="0.001"/>
+  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testAccountTransferWithObject" time="0"/>
+  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testDeposit" time="0"/>
 </testsuite>

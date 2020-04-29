@@ -39,6 +39,7 @@ public class RealMovement implements Movement {
         this.time = LocalDateTime.now();
         this.amount = amount;
     }
+    
     public RealMovement(int amount, int targetId, int sourceId){
         this.amount = amount;
         this.targetId = targetId;

@@ -4,6 +4,11 @@ package API;
 import com.google.gson.Gson;
 import dk.cphbusiness.banking.DataAccessLayer.CRUDOperations;
 import dk.cphbusiness.banking.exceptions.NotFoundException;
+import dk.cphbusiness.banking.implementations.RealAccount;
+import dk.cphbusiness.banking.implementations.RealMovement;
+import dk.cphbusiness.banking.interfaces.Account;
+import dk.cphbusiness.banking.interfaces.Customer;
+import java.io.FileNotFoundException;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
@@ -11,6 +16,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -26,8 +32,20 @@ public class ApiResource {
     private UriInfo context;
 
     public ApiResource() {
-        
+      
     }
+    
+    
+    
+    @Path("")
+    @GET
+    @Produces("text/html")
+    public String getHello(@QueryParam("id") int id) throws NotFoundException {
+        return "<html><body><div>hello world</div></body></html>";
+    }
+    
+    
+    
     /*
     ---------------------------------
                   CUSTOMER
@@ -40,10 +58,12 @@ public class ApiResource {
      * @return CustomerDetails
      * @throws NotFoundException
      */
-    @Path("customer")
+    @Path("customer/{id}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String getCustomer(@QueryParam("id") int id) throws NotFoundException {
+    public String getCustomer(@PathParam("id") int id) throws NotFoundException {
+        Customer cust = crudOperation.getCustomerById(id);
+        //System.out.println(cust.toString());
         return gson.toJson(crudOperation.getCustomerById(id));
     }
 
@@ -60,10 +80,10 @@ public class ApiResource {
      * @return BankDetails
      * @throws NotFoundException
      */
-    @Path("bank")
+    @Path("bank/{id}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String getBank(@QueryParam("id") int id) throws NotFoundException {
+    public String getBank(@PathParam("id") int id) throws NotFoundException {
         return gson.toJson(crudOperation.getBankById(id));
     }
 
@@ -81,10 +101,10 @@ public class ApiResource {
      * @return AccountDetails
      * @throws NotFoundException
      */
-    @Path("account")
+    @Path("account/{id}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String getAccount(@QueryParam("id") int id) throws NotFoundException {
+    public String getAccount(@PathParam("id") int id) throws NotFoundException {
         return gson.toJson(crudOperation.getAccountById(id));
     }
 
@@ -95,10 +115,10 @@ public class ApiResource {
      * @return long
      * @throws NotFoundException
      */
-    @Path("account/balance")
+    @Path("account/{id}/balance")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String getBalance(@QueryParam("id") int id) throws NotFoundException {
+    public String getBalance(@PathParam("id") int id) throws NotFoundException {
         return gson.toJson(crudOperation.getAccountById(id).getBalance());
     }
 
@@ -109,11 +129,11 @@ public class ApiResource {
      * @return List of MovementDetails
      * @throws NotFoundException
      */
-    @Path("account/withdrawals")
+    @Path("account/{id}/withdrawals")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String getWithdrawals(@QueryParam("id") int id) throws NotFoundException {
-        return gson.toJson(crudOperation.getAccountById(id).getWithdrawals());
+    public String getWithdrawals(@PathParam("id") int id) throws NotFoundException {
+        return gson.toJson(crudOperation.getAccountWithdrawals(id));
     }
 
     /**
@@ -123,11 +143,11 @@ public class ApiResource {
      * @return List of MovementDetails
      * @throws NotFoundException
      */
-    @Path("account/deposits")
+    @Path("account/{id}/deposits")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String getDeposits(@QueryParam("id") int id) throws NotFoundException {
-        return gson.toJson(crudOperation.getAccountById(id).getDeposits());
+    public String getDeposits(@PathParam("id") int id) throws NotFoundException {
+        return gson.toJson(crudOperation.getAccountDeposists(id));
     }
 
     /**
@@ -139,92 +159,22 @@ public class ApiResource {
      * @return Response.status(200)
      * @throws NotFoundException
      */
-    @Path("account/transfer/id")
+    @Path("account/{id}/transfer")
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response transferByAccountId(
-            @QueryParam("id") int id,
+            @PathParam("id") int id,
             @QueryParam("amount") String amount,
-            @QueryParam("source") String sourceAccountNumber,
             @QueryParam("target") String targetAccountNumber
     ) throws NotFoundException {
-         long transferamount = Long.parseLong(amount);
-        crudOperation.getAccountById(id).transfer(transferamount, targetAccountNumber);
+        long transferamount = Long.parseLong(amount);
+        RealAccount acc = (RealAccount) crudOperation.getAccountById(id);
+        RealAccount targetAccount = (RealAccount) crudOperation.getAccountByNumber(targetAccountNumber);
+        acc.transfer(transferamount, targetAccount);
+        crudOperation.createMovement(new RealMovement((int) transferamount, acc.getId(), targetAccount.getId()));
         return Response.status(200)
-                .entity("source: " + sourceAccountNumber + " --> " + " target: " + targetAccountNumber + " : " + amount)
-                .build();
-    }
-
-    /**
-     * REST endpoint to post (transfer by number) amount from sourceAccNumber to
-     * targetAccNumber
-     *
-     * @param amount
-     * @param sourceAccNumber
-     * @param targetAccNumber
-     * @return Response.status(200)
-     * @throws NotFoundException
-     */
-    @Path("account/transfer/number")
-    @POST
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
-    public Response transferByAccountNumber(
-            @QueryParam("amount") String amount,
-            @QueryParam("source") String sourceAccountNumber,
-            @QueryParam("target") String targetAccountNumber
-    ) throws NotFoundException {
-        long amountToTransfer = Long.parseLong(amount);
-        crudOperation.getAccountByNumber(sourceAccountNumber).transfer(amountToTransfer, targetAccountNumber);
-        return Response.status(200)
-                .entity("source: " + sourceAccountNumber + " --> " + " target: " + targetAccountNumber + " : " + amountToTransfer)
-                .build();
-    }
-
-    /**
-     * REST endpoint to deposit amount to account with id
-     *
-     * @param amount
-     * @param id
-     * @return MovementDetails
-     * @throws NotFoundException
-     */
-    @Path("account/deposit")
-    @POST
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
-    public Response deposit(
-            @QueryParam("amount") String amount,
-            @QueryParam("id") int id
-    ) throws NotFoundException {
-        long amountToDeposit= Long.parseLong(amount);
-        crudOperation.getAccountById(id).deposit(amountToDeposit);
-        return Response.status(200)
-                .entity("amount: " + amountToDeposit + " deposited to account with id: " + id)
-                .build();
-    }
-
-    /**
-     * REST endpoint to withdraw amount from account with id
-     *
-     * @param amount
-     * @param id
-     * @return MovementDetails
-     * @throws NotFoundException
-     */
-    @Path("account/withdraw")
-    @POST
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
-    public Response withdraw(
-            @QueryParam("amount") String amount,
-            @QueryParam("id") int id
-    ) throws NotFoundException {
-        long amountToWithdraw = Long.parseLong(amount);
-        crudOperation.getAccountById(id).deposit(amountToWithdraw);
-        return Response.status(200)
-                .entity("amount withdrawed: " + amountToWithdraw + " from: " + id)
+                .entity("source: " + acc.getNumber() + " --> " + " target: " + targetAccountNumber + " amount --> " + amount)
                 .build();
     }
 }

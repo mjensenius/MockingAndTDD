@@ -11,7 +11,7 @@ public class RealBank implements Bank {
     private int id;
     private String cvr;
     private String name;
-    private  Map<String, Account> accounts;
+    private Map<String, Account> accounts;
 
     public RealBank(String cvr, String name, Map<String, Account> accounts) {
         this.cvr = cvr;

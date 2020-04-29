@@ -33,6 +33,8 @@ public class RealAccount implements Account {
         this.customer = customer;
         this.number = number;
         this.balance = balance;
+        this.withdrawals = new ArrayList<>();
+        this.deposits = new ArrayList<>();
     }
 
 
@@ -85,6 +87,16 @@ public class RealAccount implements Account {
     public List<Movement> getDeposits() {
         return deposits;
     }
+
+    public void setWithdrawals(List<Movement> withdrawals) {
+        this.withdrawals = withdrawals;
+    }
+
+    public void setDeposits(List<Movement> deposits) {
+        this.deposits = deposits;
+    }
+    
+    
 
     @Override
     public long getBalance() {

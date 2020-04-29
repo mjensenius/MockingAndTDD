@@ -3,11 +3,14 @@ package dk.cphbusiness.banking.DataAccessLayer;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Connector {
-    private String url = "jdbc:postgresql://127.0.0.1:5432/BankTest";
-    private String user = "postgres";
-    private String password = "Stilldre1";
+    private final String DRIVER = "com.mysql.cj.jdbc.Driver";
+    private String url = "jdbc:mysql://127.0.0.1:3306/banktest?autoReconnect=true&useSSL=false";
+    private String user = "root";
+    private String password = "Stilldre1!";
 
     public Connector(String url, String user, String password) {
         this.url = url;
@@ -16,18 +19,22 @@ public class Connector {
     }
     
     public Connector (){
-        this.url = this.url;
-        this.user = this.user;
-        this.password = this.password;
     }
 
     public Connection connect() {
         Connection conn = null;
         try {
-            conn = DriverManager.getConnection(url, user, password);
-            System.out.println("Connected to the PostgreSQL server successfully.");
+            Class.forName(DRIVER).newInstance();
+            conn = DriverManager.getConnection(this.url, this.user, this.password);
+            System.out.println("Connected to the MySQL server successfully.");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Connector.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(Connector.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(Connector.class.getName()).log(Level.SEVERE, null, ex);
         }
         return conn;
     }
