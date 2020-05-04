@@ -18,13 +18,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class CRUDOperations implements DataAccessInterface {
+    
     Connector conn = new Connector();
+ 
+    
 
     public void initDB() throws FileNotFoundException {
         Connection con = conn.connect();
@@ -50,10 +51,11 @@ public class CRUDOperations implements DataAccessInterface {
     }
     
     
+    @Override
     public void createAccount(Account account) {
         String SQL = "INSERT INTO banktest.account(bankid,customerid,accountNumber, balance) values (?,?,?,?)";
-        try (Connection connect = conn.connect();
-             PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+        try (Connection connect = conn.connect()) {
+            PreparedStatement pstmt = connect.prepareStatement(SQL);
             pstmt.setInt(1, account.getBank().getId());
             pstmt.setInt(2, account.getCustomer().getId());
             pstmt.setString(3, account.getNumber());
@@ -64,17 +66,19 @@ public class CRUDOperations implements DataAccessInterface {
         }
     }
 
+    @Override
     public Account getAccountById(int id) {
         Account account = null;
         String SQL = "SELECT account.bankid as accbankid,  customerid, \n" +
                 "accountNumber, balance, bank.cvr, bank.name as bankname,\n" +
                 "customer.cpr, customer.name as customername\n" +
                 "FROM banktest.account\n" +
-                "INNER JOIN banktest.bank ON banktest.account.bankid = bank.id\n" +
+                "INNER JOIN banktest.bank ON banktest.account.bankid = bank.id \n" +
                 "INNER JOIN banktest.customer ON banktest.account.customerid = customer.id\n" +
                 "where account.id =?";
-        try (Connection connect = conn.connect();
-            PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+        try {
+            Connection connection = conn.connect();
+            PreparedStatement pstmt = connection.prepareStatement(SQL);
             pstmt.setInt(1, id);
             ResultSet rs = pstmt.executeQuery();
             
@@ -112,8 +116,8 @@ public class CRUDOperations implements DataAccessInterface {
                 "INNER JOIN banktest.bank ON banktest.account.bankid = bank.id\n" +
                 "INNER JOIN banktest.customer ON banktest.account.customerid = customer.id\n" +
                 "where account.accountNumber =?";
-        try (Connection connect = conn.connect();
-            PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+        try (Connection connect = conn.connect() ) {
+            PreparedStatement pstmt = connect.prepareStatement(SQL);
             pstmt.setString(1, accountNumber);
             ResultSet rs = pstmt.executeQuery();
             
@@ -145,8 +149,8 @@ public class CRUDOperations implements DataAccessInterface {
 
     public void deleteAccountById(int id) {
         String SQL = "DELETE FROM banktest.account WHERE id = ?";
-        try (Connection connect = conn.connect();
-            PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+        try (Connection connect = conn.connect()) {;
+            PreparedStatement pstmt = connect.prepareStatement(SQL);
             pstmt.setInt(1, id);
             ResultSet rs = pstmt.executeQuery();
             System.out.println(rs.toString());
@@ -157,8 +161,8 @@ public class CRUDOperations implements DataAccessInterface {
 
     public void updateBalanceForAccount(int amount, Account account) {
         String SQL = "UPDATE banktest.account SET balance = ? where id = ?";
-        try (Connection connect = conn.connect();
-             PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+        try (Connection connect = conn.connect() ) {
+             PreparedStatement pstmt = connect.prepareStatement(SQL);
             pstmt.setInt(1, amount);
             pstmt.setInt(2, account.getId());
             ResultSet rs = pstmt.executeQuery();
@@ -169,8 +173,8 @@ public class CRUDOperations implements DataAccessInterface {
 
     public void createBank(Bank bank) {
         String SQL = "INSERT INTO banktest.bank(cvr,name) values (?,?)";
-        try (Connection connect = conn.connect();
-             PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+        try (Connection connect = conn.connect()) {
+             PreparedStatement pstmt = connect.prepareStatement(SQL);
             pstmt.setString(1, bank.getCvr());
             pstmt.setString(2, bank.getName());
             ResultSet rs = pstmt.executeQuery();
@@ -182,8 +186,8 @@ public class CRUDOperations implements DataAccessInterface {
     public Bank getBankById(int id) {
         Bank bank = null;
         String SQL = "SELECT id, cvr, name FROM banktest.bank WHERE id = ?";
-        try (Connection connect = conn.connect();
-             PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+        try (Connection connect = conn.connect()) {
+             PreparedStatement pstmt = connect.prepareStatement(SQL);
             pstmt.setInt(1, id);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
@@ -200,8 +204,8 @@ public class CRUDOperations implements DataAccessInterface {
     }
     public void deleteBankById(int id) {
         String SQL = "DELETE * FROM banktest.bank WHERE id = ?";
-        try (Connection connect = conn.connect();
-             PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+        try (Connection connect = conn.connect()) {
+             PreparedStatement pstmt = connect.prepareStatement(SQL);
             pstmt.setInt(1, id);
             ResultSet rs = pstmt.executeQuery();
 
@@ -212,8 +216,8 @@ public class CRUDOperations implements DataAccessInterface {
 
     public void createCustomer(Customer customer){
         String SQL = "INSERT INTO banktest.customer(cpr,name,bankid) values (?,?,?)";
-        try (Connection connect = conn.connect();
-            PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+        try (Connection connect = conn.connect() ) {
+            PreparedStatement pstmt = connect.prepareStatement(SQL);
             pstmt.setString(1, customer.getCpr());
             pstmt.setString(2, customer.getName());
             pstmt.setInt(3, customer.getBank().getId());
@@ -227,8 +231,8 @@ public class CRUDOperations implements DataAccessInterface {
         String SQL = "SELECT customer.id,customer.cpr,customer.name,customer.bankid,bank.id as banksownid,bank.cvr,bank.name as banksownname FROM banktest.customer \n" +
                 "INNER JOIN banktest.bank on banktest.customer.bankid = banktest.bank.id \n" +
                 "WHERE customer.id =?";
-        try (Connection connect = conn.connect();
-             PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+        try (Connection connect = conn.connect()) {
+            PreparedStatement pstmt = connect.prepareStatement(SQL);
             pstmt.setInt(1, id);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
@@ -249,8 +253,8 @@ public class CRUDOperations implements DataAccessInterface {
     }
     public void updateCustomerName(String name, Customer customer){
         String SQL = "UPDATE banktest.customer SET name = ? where id = ?";
-        try (Connection connect = conn.connect();
-            PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+        try (Connection connect = conn.connect() ) {
+            PreparedStatement pstmt = connect.prepareStatement(SQL);
             pstmt.setString(1, name);
             pstmt.setInt(2, customer.getId());
             ResultSet rs = pstmt.executeQuery();
@@ -262,8 +266,8 @@ public class CRUDOperations implements DataAccessInterface {
     public List<Movement> getMovementsByAccountId(int id){
         List<Movement> movements = new ArrayList<>();
         String SQL = "SELECT amount,sourceaccount,targetaccount FROM BankTest.movement where sourceAccount = ? or targetAccount = ?";
-        try (Connection connect = conn.connect();
-             PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+        try (Connection connect = conn.connect()) {
+             PreparedStatement pstmt = connect.prepareStatement(SQL);
             pstmt.setInt(1, id);
             pstmt.setInt(2, id);
             ResultSet rs = pstmt.executeQuery();
@@ -286,8 +290,8 @@ public class CRUDOperations implements DataAccessInterface {
         String SQL = "INSERT INTO banktest.movement(timeOfTransfer, amount, targetAccount, sourceAccount) values (?,?,?,?)";
         long millis=System.currentTimeMillis();  
         java.sql.Date date = new java.sql.Date(millis);  
-        try (Connection connect = conn.connect();
-             PreparedStatement pstmt = connect.prepareStatement(SQL)) {
+        try (Connection connect = conn.connect()) {
+             PreparedStatement pstmt = connect.prepareStatement(SQL);
 
             pstmt.setDate(1, date);
             pstmt.setLong(2, movement.getAmount());
@@ -302,13 +306,13 @@ public class CRUDOperations implements DataAccessInterface {
 
 
     
-    
+    /*
     public static void main(String[] args) throws FileNotFoundException {
         CRUDOperations crud = new CRUDOperations();
         crud.initDB();
         //crud.teardownDB();
         System.out.println("Running and listening");
     }
-    
+    */
  
 }

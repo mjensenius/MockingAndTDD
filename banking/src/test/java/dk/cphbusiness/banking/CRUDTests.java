@@ -15,6 +15,7 @@ import org.junit.Test;
 
 import java.io.FileNotFoundException;
 import java.util.List;
+import org.junit.AfterClass;
 
 
 
@@ -31,7 +32,14 @@ public class CRUDTests {
     @After
     public void tearDown() throws FileNotFoundException {
         crud.teardownDB();
+        
     }
+    
+    @AfterClass
+    public void startDBAgain() throws FileNotFoundException{
+        crud.initDB();
+    }
+    
     @Test
     public void createAccount(){
         Bank bank = crud.getBankById(2);
