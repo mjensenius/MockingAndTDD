@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\Code\PBA\2.Semester\Test\MockingAndTDD\banking\src\main\java\dk\cphbusiness\banking\implementations\RealAccount.java
 D:\Code\PBA\2.Semester\Test\MockingAndTDD\banking\src\main\java\dk\cphbusiness\banking\DataAccessLayer\CRUDOperations.java
 D:\Code\PBA\2.Semester\Test\MockingAndTDD\banking\src\main\java\api\ApiResource.java
@@ -21,3 +22,28 @@ D:\Code\PBA\2.Semester\Test\MockingAndTDD\banking\src\main\java\dk\cphbusiness\b
 D:\Code\PBA\2.Semester\Test\MockingAndTDD\banking\src\main\java\dk\cphbusiness\banking\interfaces\Bank.java
 D:\Code\PBA\2.Semester\Test\MockingAndTDD\banking\src\main\java\dk\cphbusiness\banking\DataAccessLayer\CRUDFake.java
 D:\Code\PBA\2.Semester\Test\MockingAndTDD\banking\src\main\java\Interfaces\CustomerInterface.java
+=======
+D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking\src\main\java\API\ApplicationConfig.java
+D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking\src\main\java\dk\cphbusiness\banking\exceptions\NotFoundException.java
+D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking\src\main\java\API\ApiResource.java
+D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking\src\main\java\Interfaces\CustomerInterface.java
+D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking\src\main\java\contract\DTO\BankDTO.java
+D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking\src\main\java\dk\cphbusiness\banking\implementations\RealCustomer.java
+D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking\src\main\java\Interfaces\BankInterface.java
+D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking\src\main\java\dk\cphbusiness\banking\DataAccessLayer\CRUDFake.java
+D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking\src\main\java\Interfaces\AccountInterface.java
+D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking\src\main\java\contract\DTO\CustomerDTO.java
+D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking\src\main\java\contract\DTO\MovementDTO.java
+D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking\src\main\java\dk\cphbusiness\banking\DataAccessLayer\Connector.java
+D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking\src\main\java\dk\cphbusiness\banking\implementations\RealAccount.java
+D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking\src\main\java\dk\cphbusiness\banking\implementations\RealMovement.java
+D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking\src\main\java\dk\cphbusiness\banking\interfaces\Movement.java
+D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking\src\main\java\dk\cphbusiness\banking\implementations\RealBank.java
+D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking\src\main\java\Interfaces\IHolder.java
+D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking\src\main\java\dk\cphbusiness\banking\interfaces\Bank.java
+D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking\src\main\java\dk\cphbusiness\banking\DataAccessLayer\DataAccessInterface.java
+D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking\src\main\java\contract\DTO\AccountDTO.java
+D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking\src\main\java\dk\cphbusiness\banking\interfaces\Customer.java
+D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking\src\main\java\dk\cphbusiness\banking\DataAccessLayer\CRUDOperations.java
+D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking\src\main\java\dk\cphbusiness\banking\interfaces\Account.java
+>>>>>>> 6f0a1ca626ec82dbfd7464c6cc0201521acbd0c3

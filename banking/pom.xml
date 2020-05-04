@@ -25,11 +25,6 @@
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
         <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>42.2.11</version>
-        </dependency>
-        <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
             <version>3.4.5</version>
@@ -47,15 +42,31 @@
             <type>jar</type>
         </dependency>
         <dependency>
+<<<<<<< HEAD
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.2.10</version>
+=======
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.11</version>       
+>>>>>>> 6f0a1ca626ec82dbfd7464c6cc0201521acbd0c3
         </dependency>
     </dependencies>
     
     <build>
         <plugins>
+<<<<<<< HEAD
 
+=======
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+>>>>>>> 6f0a1ca626ec82dbfd7464c6cc0201521acbd0c3
         </plugins>
     </build>
 </project>

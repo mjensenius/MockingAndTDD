@@ -6,7 +6,7 @@
     <property name="java.vm.version" value="25.121-b13"/>
     <property name="user.country.format" value="DK"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="D:\Code\PBA\2.Semester\Test\MockingAndTDD\banking"/>
+    <property name="maven.multiModuleProjectDirectory" value="D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="D:\Code\PBA\2.Semester\Test\MockingAndTDD\banking"/>
+    <property name="user.dir" value="D:\Code\PBA\2.Semester\Test\2.0\MockingAndTDD\banking"/>
     <property name="java.runtime.version" value="1.8.0_121-b13"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_121\jre\lib\endorsed"/>
@@ -48,7 +48,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_121\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 clean install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="user.language.format" value="da"/>
@@ -66,10 +66,17 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+<<<<<<< HEAD
   <testcase classname="dk.cphbusiness.banking.CustomerMockingTest" name="testCustomerTransferNotFoundException" time="0"/>
   <testcase classname="dk.cphbusiness.banking.CustomerMockingTest" name="testGetListOfWithdrawal" time="0"/>
   <testcase classname="dk.cphbusiness.banking.CustomerMockingTest" name="testGetListOfDeposit" time="0.001"/>
   <testcase classname="dk.cphbusiness.banking.CustomerMockingTest" name="testAddAccount" time="0.003"/>
+=======
+  <testcase classname="dk.cphbusiness.banking.CustomerMockingTest" name="testCustomerTransferNotFoundException" time="0.001"/>
+  <testcase classname="dk.cphbusiness.banking.CustomerMockingTest" name="testGetListOfWithdrawal" time="0"/>
+  <testcase classname="dk.cphbusiness.banking.CustomerMockingTest" name="testGetListOfDeposit" time="0"/>
+  <testcase classname="dk.cphbusiness.banking.CustomerMockingTest" name="testAddAccount" time="0.004"/>
+>>>>>>> 6f0a1ca626ec82dbfd7464c6cc0201521acbd0c3
   <testcase classname="dk.cphbusiness.banking.CustomerMockingTest" name="testCustomerTransfer" time="0"/>
   <testcase classname="dk.cphbusiness.banking.CustomerMockingTest" name="testGetListOfWithdrawalNotFoundException" time="0.001"/>
   <testcase classname="dk.cphbusiness.banking.CustomerMockingTest" name="testGetListOfDepositNotFoundException" time="0"/>
