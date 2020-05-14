@@ -34,15 +34,12 @@ public class CRUDTests {
         crud.teardownDB();
         
     }
-<<<<<<< HEAD
-    
+    /*
     @AfterClass
     public void startDBAgain() throws FileNotFoundException{
         crud.initDB();
     }
-=======
- 
->>>>>>> 6f0a1ca626ec82dbfd7464c6cc0201521acbd0c3
+    */
     
     @Test
     public void createAccount(){

@@ -3,6 +3,7 @@ ContractTest\Beforeclass.class
 dk\cphbusiness\banking\AccountMockingTest$3.class
 ContractTest\IBankTest.class
 ContractTest\DummyData\AccountDummy$3.class
+APITest\ApiResourceTest.class
 ContractTest\IAccountTest.class
 ContractTest\ICustomerTest.class
 dk\cphbusiness\banking\BankMockingTest.class

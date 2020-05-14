@@ -2,26 +2,20 @@
 package APITest;
 
 
-import API.ApiResource;
+import api.rest.ApiResource;
 import com.google.gson.Gson;
 import contract.DTO.AccountDTO;
 import contract.DTO.BankDTO;
 import contract.DTO.CustomerDTO;
 import contract.DTO.MovementDTO;
 import dk.cphbusiness.banking.DataAccessLayer.CRUDOperations;
-import dk.cphbusiness.banking.implementations.RealCustomer;
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
-import javax.ws.rs.core.Response;
-import org.junit.AfterClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
-import org.junit.experimental.categories.Category;
 import org.junit.runners.MethodSorters;
 
 /**
@@ -91,12 +85,6 @@ public class ApiResourceTest {
         assertEquals(expNumberOfWithdrawals, ListOfWithdrawals.size());
     }
 
-    /**
-     * Test of getDeposits method, of class ApiResource. Test that account with
-     * id 1 has list of deposits of the size 4
-     *
-     * @throws java.lang.Exception
-     */
     @Test
     public void testGetDeposits() throws Exception {
         System.out.println("getDeposits");
