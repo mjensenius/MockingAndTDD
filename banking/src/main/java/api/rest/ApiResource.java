@@ -146,13 +146,13 @@ public class ApiResource {
     public Response transferByAccountId(
             @QueryParam("id") int id,
             @QueryParam("amount") String amount,
-            @QueryParam("source") String sourceAccountNumber,
             @QueryParam("target") String targetAccountNumber
     ) throws NotFoundException {
         long transferamount = Long.parseLong(amount);
+       // String accNo = crudOperation.getAccountById(id).getNumber();
         crudOperation.getAccountById(id).transfer(transferamount, targetAccountNumber);
         return Response.status(200)
-                .entity("source: " + sourceAccountNumber + " --> " + " target: " + targetAccountNumber + " : " + amount)
+                .entity("source: " + "" + " --> " + " target: " + targetAccountNumber + " : " + amount)
                 .build();
     }
 
@@ -160,7 +160,8 @@ public class ApiResource {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response transferByAccountNumber(@QueryParam("amount") String amount,
+    public Response transferByAccountNumber(
+            @QueryParam("amount") String amount,
             @QueryParam("source") String sourceAccountNumber,
             @QueryParam("target") String targetAccountNumber) throws NotFoundException {
         long amountToTransfer = Long.parseLong(amount);
@@ -170,12 +171,13 @@ public class ApiResource {
                 .build();
     }
 
-    @Path("/account/deposit")
+    @Path("/account/{id}/deposit")
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response deposit(@QueryParam("amount") String amount,
-            @QueryParam("id") int id
+    public Response deposit(
+            @PathParam("id") int id,
+            @QueryParam("amount") String amount  
     ) {
         long amountToDeposit = Long.parseLong(amount);
         crudOperation.getAccountById(id).deposit(amountToDeposit);

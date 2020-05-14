@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>SeleniumTest</title>
+        <title>Selenium Test</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
@@ -11,73 +11,91 @@
         <div>
             <label>get bank</label>
             <form action="/">
-                <input type="number" id="input_bank_id"  value="1"><br>
+                <input type="number" id="bank_id"  value="1">
                 <input type="button" value="getBank" id="get_bank" onclick="getBank()"/>
             </form> 
+            <p id="bank_res"></p> 
         </div>
 
         <div>
             <label>get customer</label>
             <form action="/">
-                <input type="number" id="input_bank_id"  value="1"><br>
+                <input type="number" id="customer_id"  value="1">
                 <input type="button" value="getBank" id="get_bank" onclick="getCustomer()"/>
             </form> 
+            <p id="customer_res"></p> 
         </div>
 
         <div>
             <label>get account</label>
             <form action="/">
-                <input type="number" id="input_bank_id"  value="1"><br>
+                <input type="number" id="account_id"  value="1">
                 <input type="button" value="getBank" id="get_bank" onclick="getAccount()"/>
             </form> 
+            <p id="account_res"></p> 
         </div>
 
         <div>
             <label>get balance</label>
             <form action="/">
-                <input type="number" id="input_acc_balance_id"  value="1"><br>
+                <input type="number" id="balance_account_id"  value="1">
                 <input type="button" value="getBalance" id="get_acc_balance" onclick="getBalance()"/>
             </form> 
+            <p id="balance_res"></p> 
         </div>
 
 
         <div>
             <label>get withdrawals</label>
             <form action="/">
-                <input type="number" id="input_acc_withdrawals"  value="1"><br>
+                <input type="number" id="withdrawal_account_id"  value="1">
                 <input type="button" value="getWithdrawals" id="get_acc_withdrawals" onclick="getWithdrawals()"/>
             </form> 
+            <p id="withdrawal_res"></p> 
         </div>
 
         <div>
             <label>get deposits</label>
             <form action="/">
-                <input type="number" id="input_acc_deposits"  value="1"><br>
+                <input type="number" id="deposit_account_id"  value="2">
                 <input type="button" value="getDeposits" id="get_acc_deposits" onclick="getDeposits()"/>
             </form> 
+            <p id="deposit_res"></p> 
         </div>
 
         <div>
-            <label>transfer (by account id)</label>
+            <label>deposit Moneyyy</label>
             <form action="/">
-                <input type="number" id="transfer_acc_id_amount"  value=""><br>
-                <input type="number" id="transfer_acc_id_source"  value=""><br>
-                <input type="number" id="transfer_acc_id_target"  value=""><br>
-                <input type="button" value="transfer (account identifier)" id="post_transfer_acc_id_amount" onclick="transferByAccId()"/>
+                <input type="number" id="deposit_account_id_put"  value="1">
+                <input type="number" id="deposit_account_amount_put"  value="100">
+                <input type="button" value="getDeposits" id="put_deposit" onclick="putDeposit()"/>
             </form> 
+            <p id="deposit_res_put"></p> 
         </div>
 
         <div>
-            <label>transfer (by account number)</label>
+            <label>transfer with account id)</label>
             <form action="/">
-                <input type="number" id="transfer_acc_id_amount"  value=""><br>
-                <input type="number" id="transfer_acc_id_source"  value=""><br>
-                <input type="number" id="transfer_acc_id_target"  value=""><br>
-                <input type="button" value="transfer (account identifier)" id="post_transfer_acc_id_amount" onclick="transferByAccId()"/>
+                <input type="number" id="transfer_acc_id_source"  placeholder="source" value="">
+                <input type="number" id="transfer_acc_id_amount" placeholder="amount"  value="">
+                <input type="number" id="transfer_acc_id_target"  placeholder="target" value="">
+                <input type="button" value="transfer" id="post_transfer_acc_id_amount" onclick="transferByAccountId()"/>
             </form> 
+            <p id="transferId_res"></p> 
+        </div>
+
+        <div>
+            <label>transfer with account number</label>
+            <form action="/">
+                <input type="number" id="transfer_acc_id_source"  placeholder="source" value="">
+                <input type="number" id="transfer_acc_id_amount"  placeholder="amount" value="">
+                <input type="number" id="transfer_acc_id_target"  placeholder="target" value="">
+                <input type="button" value="transfer" id="post_transfer_acc_id_amount" onclick="transferByAccountNumber()"/>
+            </form> 
+            <p id="transferNo_res"></p> 
         </div>
 
 
-        <script src="../js/fetchData.js"></script>
+        <script src="./js/fetchData.js"></script>
     </body>
 </html>

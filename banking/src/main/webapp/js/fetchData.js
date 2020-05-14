@@ -1,8 +1,8 @@
 var url = "http://localhost:8080";
 
 function getBank() {
-    let number = document.getElementById("input_bank_id").value;
-    fetch(url +"/banking/api/bank/" + number)
+    let id = document.getElementById("bank_id").value;
+    fetch(url +"/banking/api/bank/" + id)
         .then(res => {
             if (!res.ok)
                throw new Error(res.status + " (" + res.statusText + ").");
@@ -17,142 +17,93 @@ function getBank() {
 }
 
 function getCustomer() {
-    let number = document.getElementById("input_customer_number").value;
-    fetch(url + "/banking/api/customer/" + number)
+    let id = document.getElementById("customer_id").value;
+    fetch(url + "/banking/api/customer/" + id)
             .then(res => {
                 if (!res.ok)
                     throw new Error(res.status + " (" + res.statusText + ").");
                 return res.text();
             })
             .then(data => {
-                document.getElementById("customer").innerText = data;
-                document.getElementById("err_customer").innerText = ""; //clear previous error 
+                document.getElementById("customer_res").innerText = data;
             })
             .catch(err => {
-                document.getElementById("customer").innerText = "";
-                document.getElementById("err_customer").innerText = err;
-            });
-}
-
-function getAccounts() {
-    let number = document.getElementById("input_customer_account_number").value;
-    fetch(url + "/banking/api/customer/accounts?id=" + number)
-            .then(res => {
-                if (!res.ok)
-                    throw new Error(res.status + " (" + res.statusText + ").");
-                return res.text();
-            })
-            .then(data => {
-                document.getElementById("customer_accounts").innerText = data;
-                document.getElementById("err_customer_accounts").innerText = ""; //clear previous error 
-            })
-            .catch(err => {
-                document.getElementById("customer_accounts").innerText = "";
-                document.getElementById("err_customer_accounts").innerText = err;
-            });
-}
-
-
-
-function getBankAccounts() {
-    let number = document.getElementById("input_bank_accounts_id").value;
-    fetch(url +"/banking/api/bank/accounts/" + number)
-            .then(res => {
-                if (!res.ok)
-                    throw new Error(res.status + " (" + res.statusText + ").");
-                return res.text();
-            })
-            .then(data => {
-                document.getElementById("bank_acc_id").innerText = data;
-                document.getElementById("err_bank_acc_id").innerText = ""; //clear previous error 
-            })
-            .catch(err => {
-                document.getElementById("bank_acc_id").innerText = "";
-                document.getElementById("err_bank_acc_id").innerText = err;
+                document.getElementById("customer_res").innerText = err;
             });
 }
 
 function getAccount() {
-    let number = document.getElementById("input_account_id").value;
-    fetch(url + "/banking/api/account/" + number)
+    let id = document.getElementById("account_id").value;
+    fetch(url + "/banking/api/account/" + id)
             .then(res => {
                 if (!res.ok)
                     throw new Error(res.status + " (" + res.statusText + ").");
                 return res.text();
             })
             .then(data => {
-                document.getElementById("account").innerText = data;
-                document.getElementById("err_account").innerText = ""; //clear previous error 
+                document.getElementById("account_res").innerText = data;
             })
             .catch(err => {
-                document.getElementById("account").innerText = ""
-                document.getElementById("err_account").innerText = err;
+                document.getElementById("account_res").innerText = err;
             });
 }
 
 function getBalance() {
-    let number = document.getElementById("input_acc_balance_id").value;
-    fetch(url + "/banking/api/account/balance?id=" + number)
+    let id = document.getElementById("balance_account_id").value;
+    fetch(url + "/banking/api/account/" + id + "/balance")
             .then(res => {
                 if (!res.ok)
                     throw new Error(res.status + " (" + res.statusText + ").");
                 return res.text();
             })
             .then(data => {
-                document.getElementById("balance").innerText = data;
-                document.getElementById("err_balance").innerText = ""; //clear previous error 
+                document.getElementById("balance_res").innerText = data;
             })
             .catch(err => {
-                document.getElementById("balance").innerText = ""
-                document.getElementById("err_balance").innerText = err;
+                document.getElementById("balance_res").innerText = err;
             });
 }
 
 function getWithdrawals() {
-    let number = document.getElementById("input_acc_withdrawals").value;
-    fetch(url + "/banking/api/account/withdrawals?id=" + number)
+    let id = document.getElementById("withdrawal_account_id").value;
+    fetch(url + "/banking/api/account/" + id + "/withdrawals")
             .then(res => {
                 if (!res.ok)
                     throw new Error(res.status + " (" + res.statusText + ").");
                 return res.text();
             })
             .then(data => {
-                document.getElementById("withdrawals").innerText = data;
-                document.getElementById("err_withdrawals").innerText = ""; //clear previous error 
+                document.getElementById("withdrawal_res").innerText = data;
             })
             .catch(err => {
-                document.getElementById("withdrawals").innerText = ""
-                document.getElementById("err_withdrawals").innerText = err;
+                document.getElementById("withdrawal_res").innerText = err;
             });
 }
 
 function getDeposits() {
-    let number = document.getElementById("input_acc_withdrawals").value;
-    fetch(url + "/banking/api/account/deposits?id=" + number)
+    let id = document.getElementById("deposit_account_id").value;
+    fetch(url + "/banking/api/account/" + id + "/deposits")
             .then(res => {
                 if (!res.ok)
                     throw new Error(res.status + " (" + res.statusText + ").");
                 return res.text();
             })
             .then(data => {
-                document.getElementById("deposits").innerText = data;
-                document.getElementById("err_deposits").innerText = ""; //clear previous error 
+                document.getElementById("deposit_res").innerText = data;
             })
             .catch(err => {
-                document.getElementById("deposits").innerText = ""
-                document.getElementById("err_deposits").innerText = err;
+                document.getElementById("deposit_res").innerText = err;
+
             });
 }
 
-function transferByAccId() {
+function transferByAccountId() {
     let amount = document.getElementById("transfer_acc_id_amount").value;
-    let source = document.getElementById("transfer_acc_id_source").value;
+    let id = document.getElementById("transfer_acc_id_source").value;
     let target = document.getElementById("transfer_acc_id_target").value;
 
-    let params = {amount: amount, source: source, target: target};
-    let urlParams = new URLSearchParams(Object.entries(params));
 
-    fetch(url + '/banking/api/account/transfer/id?' + urlParams, {
+    fetch(url + "/banking/api/account/" + id + "/transfer?amount="+amount+"&target="+target, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -166,16 +117,14 @@ function transferByAccId() {
                 return res.text();
             })
             .then(data => {
-                document.getElementById("transfer_acc_id_statuscode").innerText = data;
-                document.getElementById("err_transfer_acc_id_statuscode").innerText = ""; //clear previous error 
+                document.getElementById("transferId_res").innerText = data;
             })
             .catch(err => {
-                document.getElementById("transfer_acc_id_statuscode").innerText = "";
-                document.getElementById("err_transfer_acc_id_statuscode").innerText = err;
+                document.getElementById("transferId_res").innerText = err;
             });
 }
 
-function transferByAccNumber() {
+function transferByAccountNumber() {
     let amount = document.getElementById("transfer_acc_number_amount").value;
     let source = document.getElementById("transfer_acc_number_source").value;
     let target = document.getElementById("transfer_acc_number_target").value;
@@ -183,7 +132,7 @@ function transferByAccNumber() {
     let params = {amount: amount, source: source, target: target};
     let urlParams = new URLSearchParams(Object.entries(params));
 
-    fetch(url + '/banking/api/account/transfer/number?' + urlParams, {
+    fetch(url + '/banking/api/account/transfer/number?amount='+amount+"&source="+source+"&target="+target , {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -197,23 +146,20 @@ function transferByAccNumber() {
                 return res.text();
             })
             .then(data => {
-                document.getElementById("transfer_acc_number_statuscode").innerText = data;
-                document.getElementById("err_transfer_acc_number_statuscode").innerText = ""; //clear previous error 
+                document.getElementById("transferNo_res").innerText = data;
             })
             .catch(err => {
-                document.getElementById("transfer_acc_number_statuscode").innerText = "";
-                document.getElementById("err_transfer_acc_number_statuscode").innerText = err;
+                document.getElementById("transferNo_res").innerText = err;
             });
 }
 
-function deposit() {
-    let amount = document.getElementById("deposit_amount").value;
-    let id = document.getElementById("deposit_id").value;
+function putDeposit() {
+    
+    let id = document.getElementById("deposit_account_id_put").value;
+    let amount = document.getElementById("deposit_account_amount_put").value;
  
-    let params = {amount: amount,id: id};
-    let urlParams = new URLSearchParams(Object.entries(params));
 
-    fetch(url + '/banking/api/account/deposit?' + urlParams, {
+    fetch(url + "/banking/api/account/"+id+"/deposit?amount="+amount , {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -227,12 +173,10 @@ function deposit() {
                 return res.text();
             })
             .then(data => {
-                document.getElementById("deposit").innerText = data;
-                document.getElementById("err_deposit").innerText = ""; //clear previous error 
+                document.getElementById("deposit_res_put").innerText = data;
             })
             .catch(err => {
-                document.getElementById("deposit").innerText = "";
-                document.getElementById("err_deposit").innerText = err;
+                document.getElementById("deposit_res_put").innerText = "";
             });
 }
 
