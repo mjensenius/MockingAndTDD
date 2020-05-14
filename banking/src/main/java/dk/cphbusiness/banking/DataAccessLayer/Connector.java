@@ -11,8 +11,8 @@ import java.util.logging.Logger;
 public class Connector {
     private String DRIVER = "com.mysql.cj.jdbc.Driver";
     private String url = "jdbc:mysql://127.0.0.1:3306/banktest?autoReconnect=true&useSSL=false";
-    private String user = "root";
-    private String password = "Stilldre1!";
+    private String user = "";
+    private String password = "";
 
     public Connector(String url, String user, String password) {
         this.url = url;
