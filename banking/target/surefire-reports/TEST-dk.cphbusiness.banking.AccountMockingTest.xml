@@ -69,10 +69,10 @@
   </properties>
   <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testGetDeposits" time="0"/>
   <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testGetWithdrawals" time="0"/>
-  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testAccountTransferWithNumberNotFoundException" time="0.016"/>
+  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testAccountTransferWithNumberNotFoundException" time="0"/>
   <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testWithdraw" time="0"/>
   <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testGetBalance" time="0"/>
   <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testAccountTransferWithNumber" time="0"/>
-  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testAccountTransferWithObject" time="0"/>
+  <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testAccountTransferWithObject" time="0.016"/>
   <testcase classname="dk.cphbusiness.banking.AccountMockingTest" name="testDeposit" time="0"/>
 </testsuite>

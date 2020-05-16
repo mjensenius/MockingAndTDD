@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="0" name="APITest.ApiResourceTest" time="3.949" errors="0" skipped="0">
+<testsuite tests="6" failures="0" name="APITest.ApiResourceTest" time="4.034" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\bin"/>
@@ -67,10 +67,10 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="APITest.ApiResourceTest" name="testGetAccount" time="0.735"/>
-  <testcase classname="APITest.ApiResourceTest" name="testGetBalance" time="0.463"/>
-  <testcase classname="APITest.ApiResourceTest" name="testGetBank" time="0.735"/>
-  <testcase classname="APITest.ApiResourceTest" name="testGetCustomer" time="0.813"/>
-  <testcase classname="APITest.ApiResourceTest" name="testGetDeposits" time="0.734"/>
-  <testcase classname="APITest.ApiResourceTest" name="testGetWithdrawals" time="0.469"/>
+  <testcase classname="APITest.ApiResourceTest" name="testGetAccount" time="0.602"/>
+  <testcase classname="APITest.ApiResourceTest" name="testGetBalance" time="0.686"/>
+  <testcase classname="APITest.ApiResourceTest" name="testGetBank" time="0.856"/>
+  <testcase classname="APITest.ApiResourceTest" name="testGetCustomer" time="0.417"/>
+  <testcase classname="APITest.ApiResourceTest" name="testGetDeposits" time="0.702"/>
+  <testcase classname="APITest.ApiResourceTest" name="testGetWithdrawals" time="0.771"/>
 </testsuite>
