@@ -6,9 +6,14 @@
 package api.rest;
 
 import com.google.gson.Gson;
+import contract.DTO.AccountDTO;
 import dk.cphbusiness.banking.DataAccessLayer.CRUDOperations;
 import dk.cphbusiness.banking.exceptions.NotFoundException;
+import dk.cphbusiness.banking.implementations.RealAccount;
+import dk.cphbusiness.banking.implementations.RealMovement;
+import dk.cphbusiness.banking.interfaces.Account;
 import dk.cphbusiness.banking.interfaces.Customer;
+import dk.cphbusiness.banking.interfaces.Movement;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Consumes;
@@ -58,10 +63,7 @@ public class ApiResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String getCustomer(@PathParam("id") int id) throws NotFoundException {
-        Customer cust = crudOperation.getCustomerById(id);
-        System.out.println("hello");
         return gson.toJson(crudOperation.getCustomerById(id));
-
     }
 
     /*
@@ -144,15 +146,19 @@ public class ApiResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response transferByAccountId(
-            @QueryParam("id") int id,
+            @PathParam("id") int id,
             @QueryParam("amount") String amount,
-            @QueryParam("target") String targetAccountNumber
+            @QueryParam("target") String targetId
     ) throws NotFoundException {
         long transferamount = Long.parseLong(amount);
-       // String accNo = crudOperation.getAccountById(id).getNumber();
-        crudOperation.getAccountById(id).transfer(transferamount, targetAccountNumber);
+        int targetID = Integer.parseInt(targetId);
+        RealAccount acc = (RealAccount) crudOperation.getAccountById(id);
+        RealAccount accTarget = (RealAccount) crudOperation.getAccountById(targetID);
+        acc.transfer(transferamount, accTarget);
+        crudOperation.createMovement(new RealMovement((int) transferamount, targetID, id));
+        crudOperation.createMovement(new RealMovement((int) transferamount, id, targetID));
         return Response.status(200)
-                .entity("source: " + "" + " --> " + " target: " + targetAccountNumber + " : " + amount)
+                .entity("source: " + acc.getNumber() + " --> " + " target: " + accTarget.getNumber() + " amount: " + transferamount)
                 .build();
     }
 
@@ -165,9 +171,14 @@ public class ApiResource {
             @QueryParam("source") String sourceAccountNumber,
             @QueryParam("target") String targetAccountNumber) throws NotFoundException {
         long amountToTransfer = Long.parseLong(amount);
-        crudOperation.getAccountByNumber(sourceAccountNumber).transfer(amountToTransfer, targetAccountNumber);
+        
+        RealAccount acc = (RealAccount) crudOperation.getAccountByNumber(sourceAccountNumber);
+        RealAccount accTarget = (RealAccount) crudOperation.getAccountByNumber(targetAccountNumber);
+        //acc.transfer(amountToTransfer, accTarget);
+        crudOperation.createMovement(new RealMovement((int) amountToTransfer, acc.getId(), accTarget.getId()));
+        crudOperation.createMovement(new RealMovement((int) amountToTransfer, accTarget.getId(), acc.getId()));
         return Response.status(200)
-                .entity("source: " + sourceAccountNumber + " --> " + " target: " + targetAccountNumber + " : " + amountToTransfer)
+                .entity("source: " + sourceAccountNumber + " --> " + " target: " + targetAccountNumber + " amount: " + amountToTransfer)
                 .build();
     }
 
@@ -177,7 +188,7 @@ public class ApiResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response deposit(
             @PathParam("id") int id,
-            @QueryParam("amount") String amount  
+            @QueryParam("amount") String amount
     ) {
         long amountToDeposit = Long.parseLong(amount);
         crudOperation.getAccountById(id).deposit(amountToDeposit);

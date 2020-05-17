@@ -1,5 +1,6 @@
 package dk.cphbusiness.banking.implementations;
 
+import dk.cphbusiness.banking.DataAccessLayer.CRUDOperations;
 import dk.cphbusiness.banking.exceptions.NotFoundException;
 import dk.cphbusiness.banking.interfaces.Account;
 import dk.cphbusiness.banking.interfaces.Bank;
@@ -43,8 +44,7 @@ public class RealAccount implements Account {
         if (target == null) {
             throw new NotFoundException("Account: does not exist!");
         }
-
-        this.withdraw(amount);
+        this.withdraw(amount,target.getId());
         target.deposit(amount);
     }
 
@@ -96,8 +96,6 @@ public class RealAccount implements Account {
         this.deposits = deposits;
     }
     
-    
-
     @Override
     public long getBalance() {
         return balance;
@@ -109,9 +107,9 @@ public class RealAccount implements Account {
         balance += amount;
     }
 
-    @Override
-    public void withdraw(long amount) {
-        this.withdrawals.add(new RealMovement(-amount));
+    public void withdraw(long amount, int targetId) {
+        RealMovement movement = new RealMovement((int) -amount,targetId,this.id);
+        this.withdrawals.add(movement);
         balance += -amount;
     }
 }

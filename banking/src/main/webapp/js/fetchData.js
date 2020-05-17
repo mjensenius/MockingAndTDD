@@ -129,9 +129,6 @@ function transferByAccountNumber() {
     let source = document.getElementById("transfer_acc_number_source").value;
     let target = document.getElementById("transfer_acc_number_target").value;
 
-    let params = {amount: amount, source: source, target: target};
-    let urlParams = new URLSearchParams(Object.entries(params));
-
     fetch(url + '/banking/api/account/transfer/number?amount='+amount+"&source="+source+"&target="+target , {
         method: 'POST',
         headers: {

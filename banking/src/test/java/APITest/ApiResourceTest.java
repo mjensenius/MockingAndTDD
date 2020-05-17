@@ -1,7 +1,6 @@
 
 package APITest;
 
-
 import api.rest.ApiResource;
 import com.google.gson.Gson;
 import contract.DTO.AccountDTO;
@@ -18,11 +17,6 @@ import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.runners.MethodSorters;
 
-/**
- *
- * @author Alexander W. Hørsted-Andersen <awha86@gmail.com>
- */
-
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ApiResourceTest {
 
@@ -33,9 +27,8 @@ public class ApiResourceTest {
     @Before
     public  void before() throws IOException {
          crud = new CRUDOperations();
-         crud.initDB();;
+         crud.initDB();
     }
-    
 
     @Test
     public void testGetCustomer() throws Exception {
@@ -64,7 +57,6 @@ public class ApiResourceTest {
         assertEquals(expResult, result.getName());
     }
 
-
     @Test
     public void testGetBalance() throws Exception {
         System.out.println("getBalance");
@@ -73,7 +65,6 @@ public class ApiResourceTest {
         long result = gson.fromJson(apiResource.getBalance(id), long.class);
         assertEquals(expBalance, result);
     }
-
 
     @Test
     public void testGetWithdrawals() throws Exception {

@@ -24,7 +24,7 @@ import java.util.List;
 public class CRUDOperations implements DataAccessInterface {
 
     Connector conn = new Connector();
- 
+
     public CRUDOperations() {
 
     }
@@ -51,8 +51,7 @@ public class CRUDOperations implements DataAccessInterface {
         sr.runScript(reader);
 
     }
- 
-    
+
     public void createAccount(Account account) {
         String SQL = "INSERT INTO banktest.account(bankid,customerid,accountNumber, balance) values (?,?,?,?)";
         try {
@@ -62,7 +61,7 @@ public class CRUDOperations implements DataAccessInterface {
             pstmt.setInt(2, account.getCustomer().getId());
             pstmt.setString(3, account.getNumber());
             pstmt.setLong(4, account.getBalance());
-            ResultSet rs = pstmt.executeQuery();
+            pstmt.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
@@ -109,8 +108,8 @@ public class CRUDOperations implements DataAccessInterface {
         }
         return account;
     }
-    
-        public Account getAccountByNumber(String number) {
+
+    public Account getAccountByNumber(String number) {
         Account account = null;
 
         String SQL = "SELECT account.id as accountid, account.bankid as accbankid,  customerid, \n"
@@ -137,7 +136,7 @@ public class CRUDOperations implements DataAccessInterface {
                 String customername = rs.getString("customername");
                 Customer customer = new RealCustomer(cpr, customername, bank);
 
-                int id = rs.getInt("accountid"); 
+                int id = rs.getInt("accountid");
                 int balance = rs.getInt("balance");
                 account = new RealAccount(id, bank, customer, number, balance);
                 System.out.println("return actual account");
@@ -151,8 +150,6 @@ public class CRUDOperations implements DataAccessInterface {
         }
         return account;
     }
-    
-    
 
     public List<Movement> getAccountWithdrawals(int id) {
         List<Movement> result = new ArrayList();
@@ -165,10 +162,10 @@ public class CRUDOperations implements DataAccessInterface {
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                
+
                 long amount = rs.getInt("amount");
                 int target = rs.getInt("targetAccount");
-                
+
                 Movement movement = new RealMovement((int) amount, id, target);
                 result.add(movement);
             }
@@ -178,8 +175,8 @@ public class CRUDOperations implements DataAccessInterface {
         }
         return result;
     }
-    
-       public List<Movement> getAccountDeposists(int id) {
+
+    public List<Movement> getAccountDeposists(int id) {
         List<Movement> result = new ArrayList();
         String SQL = "SELECT amount, sourceAccount FROM banktest.movement where targetAccount =? ";
         try {
@@ -190,10 +187,10 @@ public class CRUDOperations implements DataAccessInterface {
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                
+
                 long amount = rs.getInt("amount");
                 int source = rs.getInt("sourceAccount");
-                
+
                 Movement movement = new RealMovement((int) amount, id, source);
                 result.add(movement);
             }
@@ -204,9 +201,6 @@ public class CRUDOperations implements DataAccessInterface {
         return result;
     }
 
-    
-    
-
     public void deleteAccountById(int id) {
         String SQL = "DELETE FROM banktest.account WHERE id = ?";
 
@@ -214,13 +208,13 @@ public class CRUDOperations implements DataAccessInterface {
             Connection connect = conn.connect();
             PreparedStatement pstmt = connect.prepareStatement(SQL);
             pstmt.setInt(1, id);
-            ResultSet rs = pstmt.executeQuery();
-            System.out.println(rs.toString());
+            pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
 
+    @Override
     public void updateBalanceForAccount(int amount, Account account) {
         String SQL = "UPDATE banktest.account SET balance = ? where id = ?";
         try {
@@ -228,7 +222,28 @@ public class CRUDOperations implements DataAccessInterface {
             PreparedStatement pstmt = connect.prepareStatement(SQL);
             pstmt.setInt(1, amount);
             pstmt.setInt(2, account.getId());
+            pstmt.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    public void updateBalanceForAccountId(int amount, int account) {
+        String SQL1 = "Select balance From banktest.account where id = ?";
+        String SQL2 = "UPDATE banktest.account SET balance = ? where id = ?";
+        try {
+            Connection connect = conn.connect();
+
+            PreparedStatement pstmt = connect.prepareStatement(SQL1);
+            pstmt.setInt(1, account);
             ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                int balance = rs.getInt("balance");
+                PreparedStatement pstmt1 = connect.prepareStatement(SQL2);
+                pstmt1.setInt(1, amount + balance);
+                pstmt1.setInt(2, account);
+                pstmt1.executeUpdate();
+            }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
@@ -241,7 +256,7 @@ public class CRUDOperations implements DataAccessInterface {
             PreparedStatement pstmt = connect.prepareStatement(SQL);
             pstmt.setString(1, bank.getCvr());
             pstmt.setString(2, bank.getName());
-            ResultSet rs = pstmt.executeQuery();
+            pstmt.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
@@ -275,7 +290,7 @@ public class CRUDOperations implements DataAccessInterface {
             PreparedStatement pstmt = connect.prepareStatement(SQL);
 
             pstmt.setInt(1, id);
-            ResultSet rs = pstmt.executeQuery();
+            pstmt.executeUpdate();
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -290,7 +305,7 @@ public class CRUDOperations implements DataAccessInterface {
             pstmt.setString(1, customer.getCpr());
             pstmt.setString(2, customer.getName());
             pstmt.setInt(3, customer.getBank().getId());
-            ResultSet rs = pstmt.executeQuery();
+            pstmt.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
@@ -332,7 +347,7 @@ public class CRUDOperations implements DataAccessInterface {
             PreparedStatement pstmt = connect.prepareStatement(SQL);
             pstmt.setString(1, name);
             pstmt.setInt(2, customer.getId());
-            ResultSet rs = pstmt.executeQuery();
+            pstmt.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
@@ -356,6 +371,7 @@ public class CRUDOperations implements DataAccessInterface {
                 Movement movement = new RealMovement(amount, target, source);
                 movements.add(movement);
             }
+
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
@@ -364,18 +380,21 @@ public class CRUDOperations implements DataAccessInterface {
 
     public void createMovement(Movement movement) {
         String SQL = "INSERT INTO banktest.movement(timeOfTransfer, amount, targetAccount, sourceAccount) values (?,?,?,?)";
-
         long millis = System.currentTimeMillis();
         java.sql.Date date = new java.sql.Date(millis);
+
         try {
             Connection connect = conn.connect();
             PreparedStatement pstmt = connect.prepareStatement(SQL);
-
             pstmt.setDate(1, date);
-            pstmt.setLong(2, movement.getAmount());
+            pstmt.setInt(2, (int) movement.getAmount());
             pstmt.setInt(3, movement.getTargetId());
             pstmt.setInt(4, movement.getSourceId());
-            ResultSet rs = pstmt.executeQuery();
+            pstmt.executeUpdate();
+            //sender
+            updateBalanceForAccountId((int) -movement.getAmount(), movement.getSourceId());
+            //receiver
+            updateBalanceForAccountId((int) movement.getAmount(), movement.getTargetId());
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }

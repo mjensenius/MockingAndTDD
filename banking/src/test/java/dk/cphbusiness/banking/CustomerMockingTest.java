@@ -87,8 +87,8 @@ public class CustomerMockingTest {
         Customer c = new RealCustomer(cCpr, cName, bank);
         Account acc = new RealAccount(bank, c, accNo);
 
-        acc.withdraw(100);
-        acc.withdraw(100);
+        acc.withdraw(100,acc.getId());
+        acc.withdraw(100,acc.getId());
         c.addAccount(acc);
 
         assertEquals(c.getListOfWithdrawal(accNo).size(), 2);

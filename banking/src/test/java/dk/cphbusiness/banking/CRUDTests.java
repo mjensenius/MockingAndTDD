@@ -31,8 +31,7 @@ public class CRUDTests {
     }
     @After
     public void tearDown() throws FileNotFoundException {
-        crud.teardownDB();
-        
+        crud.teardownDB();  
     }
     /*
     @AfterClass
